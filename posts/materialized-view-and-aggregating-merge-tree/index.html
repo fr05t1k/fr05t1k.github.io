@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>How to optimize aggregate queries in Clickhouse? :: /etc/notes — A personal blod about software engineering</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Overview Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where we will use AggregatingMergeTree with Materialized View. Materialized View gets all data by a given query and AggregatingMergeTree aggregates inserted records by sorting key. With this approach, We can group data by some fields and it helps us optimize heavy queries for a long period."/>
+<meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/" />
+
+
+<link rel="stylesheet" href="https://etcnotes.com/assets/style.css">
+
+
+<link rel="stylesheet" href="https://etcnotes.com/style.css">
+
+
+<link rel="shortcut icon" href="/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/img/icon_76pt.png">
+<link rel="icon" type="image/png" href="/img/icon_76pt.png" sizes="76x76">
+<link rel="icon" type="image/png" href="/img/icon_40pt.png" sizes="40x40">
+<link rel="icon" type="image/png" href="/img/icon_29pt.png" sizes="29x29">
+<link rel="icon" type="image/png" href="/img/icon_20pt.png" sizes="20x20">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How to optimize aggregate queries in Clickhouse? :: /etc/notes — A personal blod about software engineering" />
+<meta name="twitter:description" content="Overview Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where we will use AggregatingMergeTree with Materialized View. Materialized View gets all data by a given query and AggregatingMergeTree aggregates inserted records by sorting key. With this approach, We can group data by some fields and it helps us optimize heavy queries for a long period." />
+<meta name="twitter:site" content="https://etcnotes.com/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="https://etcnotes.com/img/merge-tree.png">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to optimize aggregate queries in Clickhouse? :: /etc/notes — A personal blod about software engineering">
+<meta property="og:description" content="Overview Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where we will use AggregatingMergeTree with Materialized View. Materialized View gets all data by a given query and AggregatingMergeTree aggregates inserted records by sorting key. With this approach, We can group data by some fields and it helps us optimize heavy queries for a long period." />
+<meta property="og:url" content="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/" />
+<meta property="og:site_name" content="How to optimize aggregate queries in Clickhouse?" />
+<meta property="og:image" content="https://etcnotes.com/img/merge-tree.png">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-04-24 00:00:00 &#43;0300 EEST" />
+
+
+
+
+
+
+
+</head>
+<body class="dark-theme">
+<div class="container">
+  <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">/etc/notes</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/ru">Русский</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/">Blog</a></li>
+      
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/ru">Русский</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h2 class="post-title"><a href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/">How to optimize aggregate queries in Clickhouse?</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2019-04-24
+        </span>
+      
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="https://etcnotes.com/tags/howto">howto</a>&nbsp;
+        
+          #<a href="https://etcnotes.com/tags/doc">doc</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <img src="https://etcnotes.com/img/merge-tree.png" class="post-cover" />
+    
+
+    
+      <div class="table-content">
+        <h1>Table Of Content</h1>
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#how-to">How to</a>
+<ul>
+<li><a href="#aggregate-function-combinators">Aggregate function combinators</a></li>
+</ul></li>
+<li><a href="#populate">Populate</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+</nav>
+      </div>
+    
+
+    <div class="post-content">
+      
+
+<h1 id="overview">Overview</h1>
+
+<p>Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite
+expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where
+we will use <a href="https://clickhouse.yandex/docs/en/operations/table_engines/aggregatingmergetree/">AggregatingMergeTree</a>
+with <a href="https://clickhouse.yandex/docs/ru/operations/table_engines/materializedview/">Materialized View</a>. <em>Materialized
+View</em> gets all data by a given query and <em>AggregatingMergeTree</em> aggregates inserted records by <em>sorting key</em>. With this
+approach, We can group data by some fields and it helps us optimize heavy queries for a long period. Most important things,
+the optimization rate is a proportion of all records with unique records in the materialized view. It tells how fast
+your optimization will work.</p>
+
+<h1 id="how-to">How to</h1>
+
+<pre><code class="language-sql">CREATE TABLE views
+(
+  id                UInt64,
+  manager           UInt64,
+  splitTest         UInt64,
+  splitTestOption   UInt64,
+  client            UInt64,
+  schemeType        UInt64,
+  campaign          UInt64,
+  creative          UInt64,
+  source            UInt64,
+  domain            UInt64,
+  referrer          UInt64,
+  country           String,
+  device            String,
+  os                String,
+  viewAt            DateTime,
+  viewDate          Date DEFAULT toDate(viewAt),
+  platform          UInt64,
+  orientation       UInt64,
+  pageType          UInt64,
+  categoryName      UInt64,
+  widgetName        UInt64,
+  widgetElement     UInt64,
+  logged            UInt8,
+  isVisited         UInt8
+) ENGINE = ReplicatedMergeTree('/clickhouse/tables/test/{shard}/views', '{replica}', viewDate,
+           (viewDate, client), 8192);
+</code></pre>
+
+<p>We have a huge table with a large amount of data and we want to optimize queries by <em>viewDate, manager, client,
+campaign, creative, source, country, device, domain</em> columns. We need to create <em>Materialized view</em> with
+<em>AggregatingMergeTree</em> engine.</p>
+
+<pre><code class="language-sql">CREATE MATERIALIZED VIEW views_mat
+  engine = AggregatingMergeTree partition by viewDate order by (
+    viewDate,
+    manager,
+    client,
+    campaign,
+    creative,
+    source,
+    country,
+    device,
+    domain,
+    landing)
+AS
+SELECT viewDate,
+       manager,
+       client,
+       campaign,
+       creative,
+       source,
+       country,
+       device,
+       domainId,
+       landing,
+       countState() as amount
+FROM views
+GROUP BY viewDate,
+         manager,
+         client,
+         campaign,
+         creative,
+         source,
+         country,
+         device,
+         domain,
+         landing
+</code></pre>
+
+<h2 id="aggregate-function-combinators">Aggregate function combinators</h2>
+
+<p>You can see <em>countState()</em> function. This function doesn&rsquo;t return the resulting value, but just an intermediate state
+of the aggregation. You should use <em>countMerge()</em> function for getting the resulting value. More information about
+combinators you can check (here)[<a href="https://clickhouse.yandex/docs/en/query_language/agg_functions/combinators/">https://clickhouse.yandex/docs/en/query_language/agg_functions/combinators/</a>].</p>
+
+<p>Let&rsquo;s try queries and check the difference between the raw table and the materialized view.</p>
+
+<p>Raw:</p>
+
+<pre><code class="language-sql">SELECT
+    campaign,
+    count() AS views
+FROM views
+WHERE (client IN 7559922) AND (country IN 'in') AND ((viewDate &gt;= '2018-06-01') AND (viewDate &lt;= '2018-12-30'))
+GROUP BY campaign;
+
+Row 1:
+──────
+campaignId:  0
+impressions: 7955062
+
+Row 2:
+──────
+campaignId:  812661
+impressions: 11003
+
+Row 3:
+──────
+campaignId:  1334
+impressions: 253350
+
+Row 4:
+──────
+campaignId:  569467
+impressions: 93182604
+
+Row 5:
+──────
+campaignId:  237410
+impressions: 7554
+
+Row 6:
+──────
+campaignId:  23456
+impressions: 3
+
+Row 7:
+──────
+campaignId:  524556
+impressions: 438
+
+7 rows in set. Elapsed: 46.781 sec. Processed 9.18 billion rows, 116.92 GB (196.24 million rows/s., 2.50 GB/s.)
+</code></pre>
+
+<p>AgregateMergeTree and Materialized view:</p>
+
+<pre><code class="language-sql">SELECT
+    campaignId,
+    countMerge(amount) AS impressions
+FROM impressions_mat
+WHERE (userId IN 26) AND (country IN 'in') AND ((impressionDate &gt;= '2018-06-01') AND (impressionDate &lt;= '2018-12-30'))
+GROUP BY campaignId
+
+Row 1:
+──────
+campaignId:  0
+impressions: 7955062
+
+Row 2:
+──────
+campaignId:  812661
+impressions: 11003
+
+Row 3:
+──────
+campaignId:  1334
+impressions: 253350
+
+Row 4:
+──────
+campaignId:  569467
+impressions: 93182604
+
+Row 5:
+──────
+campaignId:  237410
+impressions: 7554
+
+Row 6:
+──────
+campaignId:  23456
+impressions: 3
+
+Row 7:
+──────
+campaignId:  524556
+impressions: 438
+
+7 rows in set. Elapsed: 0.116 sec. Processed 9.13 million rows, 448.10 MB (78.78 million rows/s., 3.86 GB/s.)
+</code></pre>
+
+<p>In other queries, optimization might be more or less.</p>
+
+<h1 id="populate">Populate</h1>
+
+<p><em>CREATE MATERIALIZED VIEW</em> has option <em>POPULATE</em>. It allows you to populate the view with data from request but it has
+one disadvantage. The view won&rsquo;t get data which come while population. Therefore, we need to create a new view then
+populate it after view creation. In our case, we can stop inserting new data, populate view, then start inserting.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>If you need to increase speed for some specific queries you can use <em>Materialized View</em> with <em>AggregatingMergeTree</em> engine.
+Keep in mind that improving is proportional to the amount of rows with unique values.</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://etcnotes.com/posts/mysql2csv/">
+                <span class="button__icon">←</span>
+                <span class="button__text">MySQL client out as CSV</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="https://etcnotes.com/posts/sre-2/">
+                <span class="button__text">Site Reliability Engineering: Measuring and Managing Reliability (part 2)</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+    
+      <div class="comments">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "etcnotes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user"><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">All rights reserved</a>, 2019</div>
+    
+  </div>
+</footer>
+
+<script src="https://etcnotes.com/assets/main.js"></script>
+<script src="https://etcnotes.com/assets/prism.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132816408-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132816408-1');
+</script>
+
+
+  
+</div>
+
+</body>
+</html>

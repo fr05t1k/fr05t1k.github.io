@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Macos on /etc/notes</title>
+    <link>https://etcnotes.com/ru/tags/macos/</link>
+    <description>Recent content in Macos on /etc/notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;Все права защищены&lt;/a&gt;, 2019</copyright>
+    <lastBuildDate>Thu, 10 Jan 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://etcnotes.com/ru/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Как отслеживать системные вызовы в Mac OS?</title>
+      <link>https://etcnotes.com/ru/posts/system-call/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/posts/system-call/</guid>
+      <description>DTruss DTruss это аналог strace на linux системах, использующая DTrase для этого. Эта утилита позволяет вам отслеживать системные вызовы у запушенного процесса, либо запустить процесс и отследживать его вызовы.
+Замечание В последних версия Mac OS некоторые пути из которых запущены процессы находятся под защитой SIP (System Integrity Protection), которая запрещает отслеживание системных вызовов, например путь /usr/bin. Есть выход, который я бы не рекомендовал вам. Можно отключить для некоторых процессов эту защиту в recovery mode вашей системы.</description>
+    </item>
+    
+  </channel>
+</rss>

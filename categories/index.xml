@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on /etc/notes</title>
+    <link>https://etcnotes.com/categories/</link>
+    <description>Recent content in Categories on /etc/notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;All rights reserved&lt;/a&gt;, 2019</copyright>
+    
+	<atom:link href="https://etcnotes.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

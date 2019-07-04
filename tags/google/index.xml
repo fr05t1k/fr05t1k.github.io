@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on /etc/notes</title>
+    <link>https://etcnotes.com/tags/google/</link>
+    <description>Recent content in Google on /etc/notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;All rights reserved&lt;/a&gt;, 2019</copyright>
+    <lastBuildDate>Tue, 22 Jan 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://etcnotes.com/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Site Reliability Engineering: Measuring and Managing Reliability (part 1)</title>
+      <link>https://etcnotes.com/posts/sre/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/posts/sre/</guid>
+      <description>DevOps vs SRE The definition of SRE (Site Reliability Engineering) sounds like DevOps, but if we consider DevOps as a philosophy, then SRE is a concrete the implementation of this philosophy.
+DevOps is broken into 5 key areas:
+ Reduce Organization Silos Accept Failure as Normal Implement Gradual Change Leverage Tooling and Automation Measure Everything  Let&amp;rsquo;s imagine that these pillars are an interface for a class. Then implementation of SRE are:</description>
+    </item>
+    
+  </channel>
+</rss>

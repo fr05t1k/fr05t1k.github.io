@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Howto on /etc/notes</title>
+    <link>https://etcnotes.com/ru/tags/howto/</link>
+    <description>Recent content in Howto on /etc/notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;Все права защищены&lt;/a&gt;, 2019</copyright>
+    <lastBuildDate>Fri, 28 Jun 2019 00:00:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://etcnotes.com/ru/tags/howto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Вывод MySQL client как CSV</title>
+      <link>https://etcnotes.com/ru/posts/mysql2csv/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/ru/posts/mysql2csv/</guid>
+      <description>Если вам нужно конвертировать вывод mysql-client в CSV вот рецепт
+alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  </description>
+    </item>
+    
+    <item>
+      <title>Как оптимизировать агрегированные запросы в Clickhouse?</title>
+      <link>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</guid>
+      <description>Overview Clickhouse достаточно быстрое хранилище, но когда ваше хранилище перерастает тот момент, когда агрегированные запросы по сырым данным выполняются медленно. В этот момент мы начинаем задумываться об оптимизации. Сегодня я хочу рассказать о подходе где мы будем использоваться AggregatingMergeTree. Materialized View получает все данные по определенному запросу который вы указываете при создании и AggregatingMergeTree агрегирует эти данные по ключу сортировки. Используя этот подход, мы можем группировать данные по определенным полям и это позволит делать тяжелые запросы по большому промежутку времени.</description>
+    </item>
+    
+    <item>
+      <title>Как отслеживать системные вызовы в Mac OS?</title>
+      <link>https://etcnotes.com/ru/posts/system-call/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/posts/system-call/</guid>
+      <description>DTruss DTruss это аналог strace на linux системах, использующая DTrase для этого. Эта утилита позволяет вам отслеживать системные вызовы у запушенного процесса, либо запустить процесс и отследживать его вызовы.
+Замечание В последних версия Mac OS некоторые пути из которых запущены процессы находятся под защитой SIP (System Integrity Protection), которая запрещает отслеживание системных вызовов, например путь /usr/bin. Есть выход, который я бы не рекомендовал вам. Можно отключить для некоторых процессов эту защиту в recovery mode вашей системы.</description>
+    </item>
+    
+  </channel>
+</rss>

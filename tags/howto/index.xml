@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Howto on /etc/notes</title>
+    <link>https://etcnotes.com/tags/howto/</link>
+    <description>Recent content in Howto on /etc/notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;All rights reserved&lt;/a&gt;, 2019</copyright>
+    <lastBuildDate>Fri, 28 Jun 2019 00:00:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://etcnotes.com/tags/howto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL client out as CSV</title>
+      <link>https://etcnotes.com/posts/mysql2csv/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/posts/mysql2csv/</guid>
+      <description>If you need to convert MySQL Client output as CSV here is a recipe
+alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  </description>
+    </item>
+    
+    <item>
+      <title>How to optimize aggregate queries in Clickhouse?</title>
+      <link>https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/</guid>
+      <description>Overview Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where we will use AggregatingMergeTree with Materialized View. Materialized View gets all data by a given query and AggregatingMergeTree aggregates inserted records by sorting key. With this approach, We can group data by some fields and it helps us optimize heavy queries for a long period.</description>
+    </item>
+    
+    <item>
+      <title>How To Trace Your System Calls On Mac OS</title>
+      <link>https://etcnotes.com/posts/system-call/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/posts/system-call/</guid>
+      <description>DTruss DTruss is analog of strace in linux and uses DTrase for it. It allows you to trace system calls from a running process or run a process with tracing.
+Note But from past versions of Mac OS, some paths are protected by SIP(System Integrity Protection) (i.e. /usr/bin) and cannot be traced. But there is a workaround, to change settings in recovery mode but I would not recommend it to you.</description>
+    </item>
+    
+  </channel>
+</rss>

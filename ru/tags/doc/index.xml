@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Doc on /etc/notes</title>
+    <link>https://etcnotes.com/ru/tags/doc/</link>
+    <description>Recent content in Doc on /etc/notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;Все права защищены&lt;/a&gt;, 2019</copyright>
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://etcnotes.com/ru/tags/doc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Как оптимизировать агрегированные запросы в Clickhouse?</title>
+      <link>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</guid>
+      <description>Overview Clickhouse достаточно быстрое хранилище, но когда ваше хранилище перерастает тот момент, когда агрегированные запросы по сырым данным выполняются медленно. В этот момент мы начинаем задумываться об оптимизации. Сегодня я хочу рассказать о подходе где мы будем использоваться AggregatingMergeTree. Materialized View получает все данные по определенному запросу который вы указываете при создании и AggregatingMergeTree агрегирует эти данные по ключу сортировки. Используя этот подход, мы можем группировать данные по определенным полям и это позволит делать тяжелые запросы по большому промежутку времени.</description>
+    </item>
+    
+    <item>
+      <title>Как отслеживать системные вызовы в Mac OS?</title>
+      <link>https://etcnotes.com/ru/posts/system-call/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/posts/system-call/</guid>
+      <description>DTruss DTruss это аналог strace на linux системах, использующая DTrase для этого. Эта утилита позволяет вам отслеживать системные вызовы у запушенного процесса, либо запустить процесс и отследживать его вызовы.
+Замечание В последних версия Mac OS некоторые пути из которых запущены процессы находятся под защитой SIP (System Integrity Protection), которая запрещает отслеживание системных вызовов, например путь /usr/bin. Есть выход, который я бы не рекомендовал вам. Можно отключить для некоторых процессов эту защиту в recovery mode вашей системы.</description>
+    </item>
+    
+    <item>
+      <title>Python Cheat Sheet</title>
+      <link>https://etcnotes.com/ru/posts/python/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/posts/python/</guid>
+      <description>Основные операторы &amp;gt;&amp;gt;&amp;gt; 3 / 2 1.5 &amp;gt;&amp;gt;&amp;gt; 3 // 2 1 &amp;gt;&amp;gt;&amp;gt; 3 ** 2 9 &amp;gt;&amp;gt;&amp;gt; abs(-1) 1  Основные структуры данных List (Список) Сортированный Изменяемый Содержит дубликаты  &amp;gt;&amp;gt;&amp;gt; list = [] &amp;gt;&amp;gt;&amp;gt; list = [i:j] # возвращает часть списка &amp;gt;&amp;gt;&amp;gt; list = [-1] # возвращает последний элемент &amp;gt;&amp;gt;&amp;gt; list[i] = val &amp;gt;&amp;gt;&amp;gt; list[i:j] = otherlist # замена с i-ого по j-ый element новым списком otherlist &amp;gt;&amp;gt;&amp;gt; del list[i:j] &amp;gt;&amp;gt;&amp;gt; list.</description>
+    </item>
+    
+  </channel>
+</rss>

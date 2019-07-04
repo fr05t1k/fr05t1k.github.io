@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on /etc/notes</title>
+    <link>https://etcnotes.com/ru/tags/</link>
+    <description>Recent content in Tags on /etc/notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;Все права защищены&lt;/a&gt;, 2019</copyright>
+    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://etcnotes.com/ru/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm</title>
+      <link>https://etcnotes.com/ru/tags/algorithm/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheatsheet</title>
+      <link>https://etcnotes.com/ru/tags/cheatsheet/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/tags/cheatsheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Doc</title>
+      <link>https://etcnotes.com/ru/tags/doc/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/ru/tags/doc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Howto</title>
+      <link>https://etcnotes.com/ru/tags/howto/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/ru/tags/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macos</title>
+      <link>https://etcnotes.com/ru/tags/macos/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Msqyl</title>
+      <link>https://etcnotes.com/ru/tags/msqyl/</link>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/ru/tags/msqyl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://etcnotes.com/ru/tags/python/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Systemcall</title>
+      <link>https://etcnotes.com/ru/tags/systemcall/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://etcnotes.com/ru/tags/systemcall/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
