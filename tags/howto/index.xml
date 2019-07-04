@@ -18,7 +18,7 @@
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
       
       <guid>https://etcnotes.com/posts/mysql2csv/</guid>
-      <description>If you need to convert MySQL Client output as CSV here is a recipe
+      <description>If you need to convert mysql-client output as CSV here is a recipe
 alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  </description>
     </item>
     

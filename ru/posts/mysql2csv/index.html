@@ -158,7 +158,7 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
     
 
     <div class="post-content">
-      <p>Если вам нужно конвертировать вывод mysql-client в CSV вот рецепт</p>
+      <p>Если вам нужно конвертировать вывод <code>mysql-client</code> в CSV вот рецепт</p>
 
 <pre><code class="language-bash">alias mysql2csv='sed '\''s/\,/\\,/g;s/\&quot;/\\&quot;/g;s/\t/&quot;,&quot;/g;s/^/&quot;/;s/$/&quot;/;s/\n//g'\'''
 mytsql -e &quot;select * from users&quot; | mysql2csv

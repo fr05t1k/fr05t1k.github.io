@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="If you need to convert MySQL Client output as CSV here is a recipe
+<meta name="description" content="If you need to convert mysql-client output as CSV here is a recipe
 alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  "/>
 <meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
 <meta name="robots" content="noodp"/>
@@ -30,7 +30,7 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="MySQL client out as CSV :: /etc/notes — A personal blod about software engineering" />
-<meta name="twitter:description" content="If you need to convert MySQL Client output as CSV here is a recipe
+<meta name="twitter:description" content="If you need to convert mysql-client output as CSV here is a recipe
 alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  " />
 <meta name="twitter:site" content="https://etcnotes.com/" />
 <meta name="twitter:creator" content="" />
@@ -40,7 +40,7 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="MySQL client out as CSV :: /etc/notes — A personal blod about software engineering">
-<meta property="og:description" content="If you need to convert MySQL Client output as CSV here is a recipe
+<meta property="og:description" content="If you need to convert mysql-client output as CSV here is a recipe
 alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  " />
 <meta property="og:url" content="https://etcnotes.com/posts/mysql2csv/" />
 <meta property="og:site_name" content="MySQL client out as CSV" />
@@ -158,7 +158,7 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
     
 
     <div class="post-content">
-      <p>If you need to convert MySQL Client output as CSV here is a recipe</p>
+      <p>If you need to convert <code>mysql-client</code> output as CSV here is a recipe</p>
 
 <pre><code class="language-bash">alias mysql2csv='sed '\''s/\,/\\,/g;s/\&quot;/\\&quot;/g;s/\t/&quot;,&quot;/g;s/^/&quot;/;s/$/&quot;/;s/\n//g'\'''
 mytsql -e &quot;select * from users&quot; | mysql2csv
