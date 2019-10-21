@@ -6,10 +6,10 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them.
-Import default pprof http endpoint:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:
-package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.ListenAndServe(&amp;quot;:8081&amp;quot;, nil) }  In further reading I will use pprof http endpoint for"/>
+<meta name="description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof - a built-in profiling tool. There are several ways how to use it. We will check the easiest one.
+Check the full code example here.
+First of all, we need to import default pprof http endpoints:
+import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:"/>
 <meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://etcnotes.com/posts/pprof/" />
@@ -32,25 +32,25 @@ package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&am
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="PPROF. Profiling Goalng Applications. :: /etc/notes — A personal blod about software engineering" />
-<meta name="twitter:description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them.
-Import default pprof http endpoint:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:
-package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.ListenAndServe(&amp;quot;:8081&amp;quot;, nil) }  In further reading I will use pprof http endpoint for" />
+<meta name="twitter:description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof - a built-in profiling tool. There are several ways how to use it. We will check the easiest one.
+Check the full code example here.
+First of all, we need to import default pprof http endpoints:
+import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:" />
 <meta name="twitter:site" content="https://etcnotes.com/" />
 <meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="https://etcnotes.com/pprof/pprof.jpeg">
+<meta name="twitter:image" content="https://etcnotes.com/posts/pprof/pprof.png">
 
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="PPROF. Profiling Goalng Applications. :: /etc/notes — A personal blod about software engineering">
-<meta property="og:description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them.
-Import default pprof http endpoint:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:
-package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.ListenAndServe(&amp;quot;:8081&amp;quot;, nil) }  In further reading I will use pprof http endpoint for" />
+<meta property="og:description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof - a built-in profiling tool. There are several ways how to use it. We will check the easiest one.
+Check the full code example here.
+First of all, we need to import default pprof http endpoints:
+import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:" />
 <meta property="og:url" content="https://etcnotes.com/posts/pprof/" />
 <meta property="og:site_name" content="PPROF. Profiling Goalng Applications." />
-<meta property="og:image" content="https://etcnotes.com/pprof/pprof.jpeg">
+<meta property="og:image" content="https://etcnotes.com/posts/pprof/pprof.png">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
@@ -160,7 +160,7 @@ package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&am
     
 
     
-      <img src="https://etcnotes.com/pprof/pprof.jpeg" class="post-cover" />
+      <img src="https://etcnotes.com/posts/pprof/pprof.png" class="post-cover" />
     
 
     
@@ -170,9 +170,12 @@ package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&am
 
 <h1 id="setup">Setup</h1>
 
-<p>Go Tools provide quite a lot of built-in instruments out of the box. Today we&rsquo;re going to talk about one of them.</p>
+<p>Go Tools provide quite a lot of built-in instruments out of the box. Today we&rsquo;re going to talk about one of them. Pprof
+- a built-in profiling tool. There are several ways how to use it. We will check the easiest one.</p>
 
-<p>Import default pprof http endpoint:</p>
+<p>Check the full code example <a href="https://github.com/fr05t1k/pprof-example">here</a>.</p>
+
+<p>First of all, we need to import default pprof http endpoints:</p>
 
 <pre><code class="language-go">import (
 	_ &quot;net/http/pprof&quot;
@@ -193,9 +196,73 @@ func main () {
 }
 </code></pre>
 
-<p>In further reading I will use pprof http endpoint for</p>
+<p><code>net/http/pprof</code> has init function with default handlers which can show use basics information about runtime.</p>
 
-<p>#Visualisation</p>
+<pre><code class="language-go">func init() {
+	http.HandleFunc(&quot;/debug/pprof/&quot;, Index)
+	http.HandleFunc(&quot;/debug/pprof/cmdline&quot;, Cmdline)
+	http.HandleFunc(&quot;/debug/pprof/profile&quot;, Profile)
+	http.HandleFunc(&quot;/debug/pprof/symbol&quot;, Symbol)
+	http.HandleFunc(&quot;/debug/pprof/trace&quot;, Trace)
+}
+</code></pre>
+
+<p>Let&rsquo;s check the index page. Open <code>127.0.0.1:8081/debug/pprof/</code> in your browser. This page explains in details functional
+of other pages, but we&rsquo;re interested in <code>profile</code> and <code>heap</code>.
+
+  <img src="/posts/pprof/debug-page.png"  alt="pprof debug page"  class="left"  />
+
+</p>
+
+<ul>
+<li>profile - CPU Profile</li>
+<li>head - Memory Allocation Profile</li>
+</ul>
+
+<p>Now you can run pprof for a while and check what was going on at this period. Let&rsquo;s run CPU profiling for
+30 seconds.</p>
+
+<pre><code class="language-bash">go tool pprof -http=&quot;:9090&quot; -seconds=30 http://localhost:8081/debug/pprof/profile
+</code></pre>
+
+
+  <img src="/posts/pprof/graph.png"  alt="pprof graph page"  class="left"  />
+
+
+
+<p>Each block looks like <code>main generateRandomText 0.01s (0.17%) of 1.92s (32.49%)</code> Where</p>
+
+<ul>
+<li>main - a package name</li>
+<li>generateRandomText - a function name</li>
+<li>0.01s (0.17%) - how long the function takes the time (without processing called functions inside)</li>
+<li>1.92s (32.49%) - how long the function takes in total</li>
+</ul>
+
+<p>There is another useful presentation (my favorite) - <a href="http://www.brendangregg.com/flamegraphs.html">Flame graph</a>. The X-axis shows how
+long a function is working. The Y-axis shows call stack.</p>
+
+
+  <img src="/posts/pprof/pprof.png"  alt="pprof flame graph page"  class="left"  />
+
+
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>This is the tip of the iceberg. PProf is a powerful tool for profile golang applications (not only) which allows easily
+to find problems in your code.</p>
+
+<h2 id="p-s">P.S.</h2>
+
+<p>If you use Goland by JetBrains you are lucky to have the ability to run profile right from your lovely IDE. Check
+<a href="https://blog.jetbrains.com/go/2019/04/03/profiling-go-applications-and-tests/">this</a> out how cool it is.</p>
+
+<h1 id="read-more">Read more</h1>
+
+<ul>
+<li><a href="https://blog.golang.org/profiling-go-programs">Official blog</a></li>
+<li><a href="https://github.com/google/pprof">Source code and documentation</a></li>
+</ul>
 
     </div>
     

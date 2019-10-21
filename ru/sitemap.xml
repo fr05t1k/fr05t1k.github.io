@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://etcnotes.com/ru/posts/pprof/</loc>
+    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://etcnotes.com/posts/pprof/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://etcnotes.com/ru/posts/pprof/"
+                />
+  </url>
+  
+  <url>
     <loc>https://etcnotes.com/ru/posts/mysql2csv/</loc>
     <lastmod>2019-06-28T00:00:00+03:00</lastmod>
     <xhtml:link
@@ -79,7 +94,7 @@
   
   <url>
     <loc>https://etcnotes.com/ru/</loc>
-    <lastmod>2019-06-28T00:00:00+03:00</lastmod>
+    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -142,7 +157,7 @@
   
   <url>
     <loc>https://etcnotes.com/ru/tags/doc/</loc>
-    <lastmod>2019-04-24T00:00:00+03:00</lastmod>
+    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -153,6 +168,22 @@
                 rel="alternate"
                 hreflang="ru"
                 href="https://etcnotes.com/ru/tags/doc/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://etcnotes.com/ru/tags/golang/</loc>
+    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://etcnotes.com/tags/golang/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://etcnotes.com/ru/tags/golang/"
                 />
   </url>
   
@@ -206,7 +237,7 @@
   
   <url>
     <loc>https://etcnotes.com/ru/posts/</loc>
-    <lastmod>2019-06-28T00:00:00+03:00</lastmod>
+    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"

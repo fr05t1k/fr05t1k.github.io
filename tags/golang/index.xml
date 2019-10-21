@@ -18,10 +18,10 @@
       <pubDate>Sat, 21 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://etcnotes.com/posts/pprof/</guid>
-      <description>Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them.
-Import default pprof http endpoint:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:
-package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.ListenAndServe(&amp;quot;:8081&amp;quot;, nil) }  In further reading I will use pprof http endpoint for</description>
+      <description>Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof - a built-in profiling tool. There are several ways how to use it. We will check the easiest one.
+Check the full code example here.
+First of all, we need to import default pprof http endpoints:
+import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:</description>
     </item>
     
   </channel>
