@@ -208,16 +208,17 @@ func main () {
 </code></pre>
 
 <p>Let&rsquo;s check the index page. Open <code>127.0.0.1:8081/debug/pprof/</code> in your browser. This page explains in details functional
-of other pages, but we&rsquo;re interested in <code>profile</code> and <code>heap</code>.
-
-  <img src="/posts/pprof/debug-page.png"  alt="pprof debug page"  class="left"  />
-
-</p>
+of other pages, but we&rsquo;re interested in <code>profile</code> and <code>heap</code>.</p>
 
 <ul>
 <li>profile - CPU Profile</li>
 <li>head - Memory Allocation Profile</li>
 </ul>
+
+
+  <img src="/posts/pprof/debug-page.png"  alt="pprof debug page"  class="left"  />
+
+
 
 <p>Now you can run pprof for a while and check what was going on at this period. Let&rsquo;s run CPU profiling for
 30 seconds.</p>
