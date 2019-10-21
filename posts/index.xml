@@ -7,22 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;All rights reserved&lt;/a&gt;, 2019</copyright>
-    <lastBuildDate>Sat, 21 Sep 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jun 2019 00:00:00 +0300</lastBuildDate>
     
 	<atom:link href="https://etcnotes.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>PPROF. Profiling Goalng Applications.</title>
-      <link>https://etcnotes.com/posts/pprof/</link>
-      <pubDate>Sat, 21 Sep 2019 00:00:00 +0300</pubDate>
-      
-      <guid>https://etcnotes.com/posts/pprof/</guid>
-      <description>Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them.
-Import default pprof http endpoint:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:
-package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.ListenAndServe(&amp;quot;:8081&amp;quot;, nil) }  In further reading I will use pprof http endpoint for</description>
-    </item>
     
     <item>
       <title>MySQL client out as CSV</title>

@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   
-    <title>MySQL client out as CSV :: /etc/notes — A personal blod about software engineering</title>
+    <title>PPROF. Profiling Goalng Applications. :: /etc/notes — A personal blod about software engineering</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="If you need to convert mysql-client output as CSV here is a recipe
-alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  "/>
+<meta name="description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them.
+Import default pprof http endpoint:
+import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:
+package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.ListenAndServe(&amp;quot;:8081&amp;quot;, nil) }  In further reading I will use pprof http endpoint for"/>
 <meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://etcnotes.com/posts/mysql2csv/" />
+<link rel="canonical" href="https://etcnotes.com/posts/pprof/" />
 
 
 <link rel="stylesheet" href="https://etcnotes.com/assets/style.css">
@@ -29,26 +31,30 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="MySQL client out as CSV :: /etc/notes — A personal blod about software engineering" />
-<meta name="twitter:description" content="If you need to convert mysql-client output as CSV here is a recipe
-alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  " />
+<meta name="twitter:title" content="PPROF. Profiling Goalng Applications. :: /etc/notes — A personal blod about software engineering" />
+<meta name="twitter:description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them.
+Import default pprof http endpoint:
+import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:
+package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.ListenAndServe(&amp;quot;:8081&amp;quot;, nil) }  In further reading I will use pprof http endpoint for" />
 <meta name="twitter:site" content="https://etcnotes.com/" />
 <meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="">
+<meta name="twitter:image" content="https://etcnotes.com/pprof/pprof.jpeg">
 
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="MySQL client out as CSV :: /etc/notes — A personal blod about software engineering">
-<meta property="og:description" content="If you need to convert mysql-client output as CSV here is a recipe
-alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  " />
-<meta property="og:url" content="https://etcnotes.com/posts/mysql2csv/" />
-<meta property="og:site_name" content="MySQL client out as CSV" />
-<meta property="og:image" content="">
+<meta property="og:title" content="PPROF. Profiling Goalng Applications. :: /etc/notes — A personal blod about software engineering">
+<meta property="og:description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them.
+Import default pprof http endpoint:
+import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:
+package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.ListenAndServe(&amp;quot;:8081&amp;quot;, nil) }  In further reading I will use pprof http endpoint for" />
+<meta property="og:url" content="https://etcnotes.com/posts/pprof/" />
+<meta property="og:site_name" content="PPROF. Profiling Goalng Applications." />
+<meta property="og:image" content="https://etcnotes.com/pprof/pprof.jpeg">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2019-06-28 00:00:00 &#43;0300 EEST" />
+<meta property="article:published_time" content="2019-09-21 00:00:00 &#43;0300 EEST" />
 
 
 
@@ -133,11 +139,11 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
   <div class="content">
     
   <div class="post">
-    <h2 class="post-title"><a href="https://etcnotes.com/posts/mysql2csv/">MySQL client out as CSV</a></h2>
+    <h2 class="post-title"><a href="https://etcnotes.com/posts/pprof/">PPROF. Profiling Goalng Applications.</a></h2>
     <div class="post-meta">
       
         <span class="post-date">
-            2019-06-28
+            2019-09-21
         </span>
       
       
@@ -146,23 +152,50 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
     
       <span class="post-tags">
         
-          #<a href="https://etcnotes.com/tags/msqyl">msqyl</a>&nbsp;
+          #<a href="https://etcnotes.com/tags/golang">golang</a>&nbsp;
         
-          #<a href="https://etcnotes.com/tags/howto">howto</a>&nbsp;
+          #<a href="https://etcnotes.com/tags/doc">doc</a>&nbsp;
         
       </span>
     
 
     
+      <img src="https://etcnotes.com/pprof/pprof.jpeg" class="post-cover" />
+    
 
     
 
     <div class="post-content">
-      <p>If you need to convert <code>mysql-client</code> output as CSV here is a recipe</p>
+      
 
-<pre><code class="language-bash">alias mysql2csv='sed '\''s/\,/\\,/g;s/\&quot;/\\&quot;/g;s/\t/&quot;,&quot;/g;s/^/&quot;/;s/$/&quot;/;s/\n//g'\'''
-mytsql -e &quot;select * from users&quot; | mysql2csv
+<h1 id="setup">Setup</h1>
+
+<p>Go Tools provide quite a lot of built-in instruments out of the box. Today we&rsquo;re going to talk about one of them.</p>
+
+<p>Import default pprof http endpoint:</p>
+
+<pre><code class="language-go">import (
+	_ &quot;net/http/pprof&quot;
+)
 </code></pre>
+
+<p>If you don&rsquo;t use http in your application you can just run it standalone:</p>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;net/http&quot;
+	_ &quot;net/http/pprof&quot;
+)
+
+func main () {
+    http.ListenAndServe(&quot;:8081&quot;, nil)
+}
+</code></pre>
+
+<p>In further reading I will use pprof http endpoint for</p>
+
+<p>#Visualisation</p>
 
     </div>
     
@@ -175,8 +208,8 @@ mytsql -e &quot;select * from users&quot; | mysql2csv
           
           
             <span class="button next">
-              <a href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/">
-                <span class="button__text">How to optimize aggregate queries in Clickhouse?</span>
+              <a href="https://etcnotes.com/posts/mysql2csv/">
+                <span class="button__text">MySQL client out as CSV</span>
                 <span class="button__icon">→</span>
               </a>
             </span>
