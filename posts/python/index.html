@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>Python Cheat Sheet :: /etc/notes — A personal blod about software engineering</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>Python Cheat Sheet :: /etc/notes — A personal blod about software engineering</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Basic operations &amp;gt;&amp;gt;&amp;gt; 3 / 2 1.5 &amp;gt;&amp;gt;&amp;gt; 3 // 2 1 &amp;gt;&amp;gt;&amp;gt; 3 ** 2 9 &amp;gt;&amp;gt;&amp;gt; abs(-1) 1  Basic Data Structures List Ordered Changable Duplicates  &amp;gt;&amp;gt;&amp;gt; list = [] &amp;gt;&amp;gt;&amp;gt; list = [i:j] # returns list subset &amp;gt;&amp;gt;&amp;gt; list = [-1] # returns last element &amp;gt;&amp;gt;&amp;gt; list[i] = val &amp;gt;&amp;gt;&amp;gt; list[i:j] = otherlist # replace ith to jth element with otherlist &amp;gt;&amp;gt;&amp;gt; del list[i:j] &amp;gt;&amp;gt;&amp;gt; list."/>
+<meta name="description" content="Basic operations &amp;gt;&amp;gt;&amp;gt; 3 / 2 1.5 &amp;gt;&amp;gt;&amp;gt; 3 // 2 1 &amp;gt;&amp;gt;&amp;gt; 3 ** 2 9 &amp;gt;&amp;gt;&amp;gt; abs(-1) 1 Basic Data Structures List  Ordered Changable Duplicates  &amp;gt;&amp;gt;&amp;gt; list = [] &amp;gt;&amp;gt;&amp;gt; list = [i:j] # returns list subset &amp;gt;&amp;gt;&amp;gt; list = [-1] # returns last element &amp;gt;&amp;gt;&amp;gt; list[i] = val &amp;gt;&amp;gt;&amp;gt; list[i:j] = otherlist # replace ith to jth element with otherlist &amp;gt;&amp;gt;&amp;gt; del list[i:j] &amp;gt;&amp;gt;&amp;gt; list.append(item) # O(1) or O(n) in case of resizing &amp;gt;&amp;gt;&amp;gt; list."/>
 <meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://etcnotes.com/posts/python/" />
+
+
+
 
 
 <link rel="stylesheet" href="https://etcnotes.com/assets/style.css">
@@ -27,41 +30,33 @@
 
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Python Cheat Sheet :: /etc/notes — A personal blod about software engineering" />
-<meta name="twitter:description" content="Basic operations &amp;gt;&amp;gt;&amp;gt; 3 / 2 1.5 &amp;gt;&amp;gt;&amp;gt; 3 // 2 1 &amp;gt;&amp;gt;&amp;gt; 3 ** 2 9 &amp;gt;&amp;gt;&amp;gt; abs(-1) 1  Basic Data Structures List Ordered Changable Duplicates  &amp;gt;&amp;gt;&amp;gt; list = [] &amp;gt;&amp;gt;&amp;gt; list = [i:j] # returns list subset &amp;gt;&amp;gt;&amp;gt; list = [-1] # returns last element &amp;gt;&amp;gt;&amp;gt; list[i] = val &amp;gt;&amp;gt;&amp;gt; list[i:j] = otherlist # replace ith to jth element with otherlist &amp;gt;&amp;gt;&amp;gt; del list[i:j] &amp;gt;&amp;gt;&amp;gt; list." />
-<meta name="twitter:site" content="https://etcnotes.com/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="https://etcnotes.com/img/python.jpeg">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python Cheat Sheet"/>
+<meta name="twitter:description" content="Cheat sheet for quick solving your cases on HackerRank"/>
 
 
-<meta property="og:locale" content="en" />
+
+<meta property="og:title" content="Python Cheat Sheet" />
+<meta property="og:description" content="Cheat sheet for quick solving your cases on HackerRank" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Python Cheat Sheet :: /etc/notes — A personal blod about software engineering">
-<meta property="og:description" content="Basic operations &amp;gt;&amp;gt;&amp;gt; 3 / 2 1.5 &amp;gt;&amp;gt;&amp;gt; 3 // 2 1 &amp;gt;&amp;gt;&amp;gt; 3 ** 2 9 &amp;gt;&amp;gt;&amp;gt; abs(-1) 1  Basic Data Structures List Ordered Changable Duplicates  &amp;gt;&amp;gt;&amp;gt; list = [] &amp;gt;&amp;gt;&amp;gt; list = [i:j] # returns list subset &amp;gt;&amp;gt;&amp;gt; list = [-1] # returns last element &amp;gt;&amp;gt;&amp;gt; list[i] = val &amp;gt;&amp;gt;&amp;gt; list[i:j] = otherlist # replace ith to jth element with otherlist &amp;gt;&amp;gt;&amp;gt; del list[i:j] &amp;gt;&amp;gt;&amp;gt; list." />
 <meta property="og:url" content="https://etcnotes.com/posts/python/" />
-<meta property="og:site_name" content="Python Cheat Sheet" />
-<meta property="og:image" content="https://etcnotes.com/img/python.jpeg">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2019-01-08 00:00:00 &#43;0200 EET" />
+<meta property="article:published_time" content="2019-01-08T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-01-08T00:00:00+02:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
 
 
 
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">/etc/notes</span>
@@ -127,335 +122,272 @@
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
+  
+  
+
   <div class="post">
-    <h2 class="post-title"><a href="https://etcnotes.com/posts/python/">Python Cheat Sheet</a></h2>
+    <h1 class="post-title"><a href="https://etcnotes.com/posts/python/">Python Cheat Sheet</a></h1>
     <div class="post-meta">
       
         <span class="post-date">
-            2019-01-08
+          2019-01-08
         </span>
+
+        
+          
+        
+      
+
       
       
     </div>
 
     
-      <span class="post-tags">
-        
-          #<a href="https://etcnotes.com/tags/python">python</a>&nbsp;
-        
-          #<a href="https://etcnotes.com/tags/cheatsheet">cheatsheet</a>&nbsp;
-        
-          #<a href="https://etcnotes.com/tags/algorithm">algorithm</a>&nbsp;
-        
-          #<a href="https://etcnotes.com/tags/doc">doc</a>&nbsp;
-        
-      </span>
-    
 
     
-      <img src="https://etcnotes.com/img/python.jpeg" class="post-cover" />
+      
+        <img src="https://etcnotes.com/img/python.jpeg" class="post-cover" />
+      
     
 
     
       <div class="table-content">
         <h1>Table Of Content</h1>
         <nav id="TableOfContents">
-<ul>
-<li><a href="#basic-operations">Basic operations</a></li>
-<li><a href="#basic-data-structures">Basic Data Structures</a>
-<ul>
-<li><a href="#list">List</a></li>
-<li><a href="#tuple">Tuple</a></li>
-<li><a href="#set">Set</a></li>
-<li><a href="#dict">Dict</a></li>
-<li><a href="#string">String</a></li>
-</ul></li>
-<li><a href="#loops-and-iterations">Loops And Iterations</a></li>
-<li><a href="#sorting">Sorting</a>
-<ul>
-<li><a href="#key-functions">Key Functions</a></li>
-</ul></li>
-<li><a href="#extended-data-structures">Extended Data Structures</a>
-<ul>
-<li><a href="#queue">Queue</a></li>
-<li><a href="#linked-list">Linked List</a></li>
-</ul></li>
-<li><a href="#formulas">Formulas</a></li>
-</ul>
+  <ul>
+    <li><a href="#list">List</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#set">Set</a></li>
+    <li><a href="#dict">Dict</a></li>
+    <li><a href="#string">String</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#key-functions">Key Functions</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#queue">Queue</a></li>
+    <li><a href="#linked-list">Linked List</a></li>
+  </ul>
 </nav>
       </div>
     
 
     <div class="post-content">
       
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#list">List</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#set">Set</a></li>
+    <li><a href="#dict">Dict</a></li>
+    <li><a href="#string">String</a></li>
+  </ul>
 
-<h1 id="basic-operations">Basic operations</h1>
+  <ul>
+    <li><a href="#key-functions">Key Functions</a></li>
+  </ul>
 
-<pre><code class="language-python">&gt;&gt;&gt; 3 / 2
-1.5
-&gt;&gt;&gt; 3 // 2
-1
-&gt;&gt;&gt; 3 ** 2
-9
-&gt;&gt;&gt; abs(-1)
-1
-</code></pre>
-
-<h1 id="basic-data-structures">Basic Data Structures</h1>
-
+  <ul>
+    <li><a href="#queue">Queue</a></li>
+    <li><a href="#linked-list">Linked List</a></li>
+  </ul>
+</nav></aside>
+      
+      <h1 id="basic-operations">Basic operations</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">1.5</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">1</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">9</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> abs(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+<span style="color:#ae81ff">1</span>
+</code></pre></div><h1 id="basic-data-structures">Basic Data Structures</h1>
 <h2 id="list">List</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Ordered</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Changable</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Duplicates</label></li>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Ordered</li>
+<li><input checked="" disabled="" type="checkbox"> Changable</li>
+<li><input checked="" disabled="" type="checkbox"> Duplicates</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> list <span style="color:#f92672">=</span> []
+<span style="color:#f92672">&gt;&gt;&gt;</span> list <span style="color:#f92672">=</span> [i:j] <span style="color:#75715e"># returns list subset</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list <span style="color:#f92672">=</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]  <span style="color:#75715e"># returns last element</span>
 
-<pre><code class="language-python">&gt;&gt;&gt; list = []
-&gt;&gt;&gt; list = [i:j] # returns list subset
-&gt;&gt;&gt; list = [-1]  # returns last element
+<span style="color:#f92672">&gt;&gt;&gt;</span> list[i] <span style="color:#f92672">=</span> val
+<span style="color:#f92672">&gt;&gt;&gt;</span> list[i:j] <span style="color:#f92672">=</span> otherlist  <span style="color:#75715e"># replace ith to jth element with otherlist</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">del</span> list[i:j]
 
-&gt;&gt;&gt; list[i] = val
-&gt;&gt;&gt; list[i:j] = otherlist  # replace ith to jth element with otherlist
-&gt;&gt;&gt; del list[i:j]
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>append(item)          <span style="color:#75715e"># O(1) or O(n) in case of resizing</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>extend(another_list)  <span style="color:#75715e"># O(1) or O(n) in case of resizing</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>insert(index, item)   <span style="color:#75715e"># O(n)</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>pop()                 <span style="color:#75715e"># O(1) returns and removes last element from the list</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>pop(i)                <span style="color:#75715e"># O(n) returns and removes i-th element from the list</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>remove(value)             <span style="color:#75715e"># O(n) removes the first item from the list whose value is `value`</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list1 <span style="color:#f92672">+</span> list2              <span style="color:#75715e"># combine two list    </span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> set(list)                  <span style="color:#75715e"># remove duplicate elements from a list</span>
 
-&gt;&gt;&gt; list.append(item)          # O(1) or O(n) in case of resizing
-&gt;&gt;&gt; list.extend(another_list)  # O(1) or O(n) in case of resizing
-&gt;&gt;&gt; list.insert(index, item)   # O(n)
-&gt;&gt;&gt; list.pop()                 # O(1) returns and removes last element from the list
-&gt;&gt;&gt; list.pop(i)                # O(n) returns and removes i-th element from the list
-&gt;&gt;&gt; list.remove(value)             # O(n) removes the first item from the list whose value is `value`
-&gt;&gt;&gt; list1 + list2              # combine two list    
-&gt;&gt;&gt; set(list)                  # remove duplicate elements from a list
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>reverse()    <span style="color:#75715e"># reverses the elements of the list in-place</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>count(item)
+<span style="color:#f92672">&gt;&gt;&gt;</span> sum(list)
 
-&gt;&gt;&gt; list.reverse()    # reverses the elements of the list in-place
-&gt;&gt;&gt; list.count(item)
-&gt;&gt;&gt; sum(list)
-
-&gt;&gt;&gt; zip(list1, list2)  # returns list of tuples with n-th element of both list1 and list2
-&gt;&gt;&gt; list.sort()        # sorts in-place, returns None
-&gt;&gt;&gt; sorted(list)       # returns sorted copy of list
-&gt;&gt;&gt; &quot;,&quot;.join(list)     # returns a string with list elements separated by comma
-</code></pre>
-
-<h2 id="tuple">Tuple</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Ordered</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Changable</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Duplicates</label></li>
+<span style="color:#f92672">&gt;&gt;&gt;</span> zip(list1, list2)  <span style="color:#75715e"># returns list of tuples with n-th element of both list1 and list2</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>sort()        <span style="color:#75715e"># sorts in-place, returns None</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> sorted(list)       <span style="color:#75715e"># returns sorted copy of list</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join(list)     <span style="color:#75715e"># returns a string with list elements separated by comma</span>
+</code></pre></div><h2 id="tuple">Tuple</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Ordered</li>
+<li><input disabled="" type="checkbox"> Changable</li>
+<li><input checked="" disabled="" type="checkbox"> Duplicates</li>
 </ul>
-
 <p>Can be used as a dictionary key</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> tuple <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;cherry&#34;</span>)
 
-<pre><code class="language-python">&gt;&gt;&gt; tuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
-
-&gt;&gt;&gt; tuple[1] # banana
-'banana'
-&gt;&gt;&gt; tuple.count()
-3
-&gt;&gt;&gt; tuple.index(&quot;banana&quot;)
-1
-</code></pre>
-
-<h2 id="set">Set</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Ordered</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Changable</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Duplicates</label></li>
+<span style="color:#f92672">&gt;&gt;&gt;</span> tuple[<span style="color:#ae81ff">1</span>] <span style="color:#75715e"># banana</span>
+<span style="color:#e6db74">&#39;banana&#39;</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> tuple<span style="color:#f92672">.</span>count()
+<span style="color:#ae81ff">3</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> tuple<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#34;banana&#34;</span>)
+<span style="color:#ae81ff">1</span>
+</code></pre></div><h2 id="set">Set</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Ordered</li>
+<li><input checked="" disabled="" type="checkbox"> Changable</li>
+<li><input disabled="" type="checkbox"> Duplicates</li>
 </ul>
-
 <p>Cannot access by index</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">set <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;cherry&#34;</span>}
 
-<pre><code class="language-python">set = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+set<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;orange&#34;</span>)
+set<span style="color:#f92672">.</span>update([<span style="color:#e6db74">&#34;orange&#34;</span>, <span style="color:#e6db74">&#34;mango&#34;</span>, <span style="color:#e6db74">&#34;grapes&#34;</span>])
 
-set.add(&quot;orange&quot;)
-set.update([&quot;orange&quot;, &quot;mango&quot;, &quot;grapes&quot;])
+<span style="color:#75715e"># intersecton</span>
+{<span style="color:#e6db74">&#34;a&#34;</span>} <span style="color:#f92672">&amp;</span> {<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>}
+{<span style="color:#e6db74">&#39;a&#39;</span>}
 
-# intersecton
-{&quot;a&quot;} &amp; {&quot;a&quot;, &quot;b&quot;}
-{'a'}
+<span style="color:#75715e"># union</span>
+{<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>} <span style="color:#f92672">|</span> {<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>}
+{<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>}
 
-# union
-{&quot;a&quot;, &quot;c&quot;} | {&quot;a&quot;, &quot;b&quot;}
-{'b', 'a', 'c'}
+<span style="color:#75715e"># difference </span>
+{<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>} <span style="color:#f92672">^</span> {<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>}
+{<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>}
 
-# difference 
-{&quot;a&quot;, &quot;c&quot;} ^ {&quot;a&quot;, &quot;b&quot;}
-{'b', 'c'}
-
-# create set of unique characters from the string 
-set(&quot;aba&quot;)
-{'b', 'a'}
-</code></pre>
-
-<h2 id="dict">Dict</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Ordered</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Changable</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Duplicates</label></li>
+<span style="color:#75715e"># create set of unique characters from the string </span>
+set(<span style="color:#e6db74">&#34;aba&#34;</span>)
+{<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>}
+</code></pre></div><h2 id="dict">Dict</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Ordered</li>
+<li><input checked="" disabled="" type="checkbox"> Changable</li>
+<li><input disabled="" type="checkbox"> Duplicates</li>
 </ul>
-
-<pre><code class="language-python">&gt;&gt;&gt; dict.keys()
-&gt;&gt;&gt; dict.values()
-&gt;&gt;&gt; &quot;key&quot; in dict    # let's say this returns False, then...
-&gt;&gt;&gt; dict[&quot;key&quot;]      # ...this raises KeyError
-&gt;&gt;&gt; dict.get(&quot;key&quot;)  # ...this returns None
-&gt;&gt;&gt; dict.setdefault(&quot;key&quot;, 1)
-</code></pre>
-
-<h2 id="string">String</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Changable</label></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>keys()
+<span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>values()
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;key&#34;</span> <span style="color:#f92672">in</span> dict    <span style="color:#75715e"># let&#39;s say this returns False, then...</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> dict[<span style="color:#e6db74">&#34;key&#34;</span>]      <span style="color:#75715e"># ...this raises KeyError</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;key&#34;</span>)  <span style="color:#75715e"># ...this returns None</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>setdefault(<span style="color:#e6db74">&#34;key&#34;</span>, <span style="color:#ae81ff">1</span>)
+</code></pre></div><h2 id="string">String</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Changable</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> str[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">4</span>]
+<span style="color:#f92672">&gt;&gt;&gt;</span> len(str)
 
-<pre><code class="language-python">&gt;&gt;&gt; str[0:4]
-&gt;&gt;&gt; len(str)
+<span style="color:#f92672">&gt;&gt;&gt;</span> string<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;-&#34;</span>, <span style="color:#e6db74">&#34; &#34;</span>)   <span style="color:#75715e"># find and replace</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join(list)             <span style="color:#75715e"># join list into string</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;hi {0}&#34;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;j&#39;</span>)       <span style="color:#75715e"># format string</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#34;,&#34;</span>)              <span style="color:#75715e"># find in the string</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#34;,&#34;</span>)             <span style="color:#75715e"># same, but raises IndexError</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>count(<span style="color:#e6db74">&#34;,&#34;</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;,&#34;</span>)
 
-&gt;&gt;&gt; string.replace(&quot;-&quot;, &quot; &quot;)   # find and replace
-&gt;&gt;&gt; &quot;,&quot;.join(list)             # join list into string
-&gt;&gt;&gt; &quot;hi {0}&quot;.format('j')       # format string
-&gt;&gt;&gt; str.find(&quot;,&quot;)              # find in the string
-&gt;&gt;&gt; str.index(&quot;,&quot;)             # same, but raises IndexError
-&gt;&gt;&gt; str.count(&quot;,&quot;)
-&gt;&gt;&gt; str.split(&quot;,&quot;)
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>lower() <span style="color:#75715e"># hello world</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>upper() <span style="color:#75715e"># HELLO WORLD </span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>title() <span style="color:#75715e"># Hello World</span>
 
-&gt;&gt;&gt; str.lower() # hello world
-&gt;&gt;&gt; str.upper() # HELLO WORLD 
-&gt;&gt;&gt; str.title() # Hello World
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>lstrip() <span style="color:#75715e"># left strip</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>rstrip() <span style="color:#75715e"># right strip</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>strip()  <span style="color:#75715e"># both</span>
 
-&gt;&gt;&gt; str.lstrip() # left strip
-&gt;&gt;&gt; str.rstrip() # right strip
-&gt;&gt;&gt; str.strip()  # both
+<span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>islower() <span style="color:#75715e"># is lower/upper/title</span>
+</code></pre></div><h1 id="loops-and-iterations">Loops And Iterations</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>]:
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):        <span style="color:#75715e"># 0 to 3</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>):     <span style="color:#75715e"># 4 to 7</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>):  <span style="color:#75715e"># 1, 3, 5, 7</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> key, val <span style="color:#f92672">in</span> dict<span style="color:#f92672">.</span>items():
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> index, item <span style="color:#f92672">in</span> enumerate(list):
+</code></pre></div><p>To loop over two or more sequences at the same time, the entries can be paired with the zip() function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> q, a <span style="color:#f92672">in</span> zip(questions, answers):
+<span style="color:#f92672">...</span>  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;What is your {0}?  It is {1}.&#39;</span><span style="color:#f92672">.</span>format(q, a))
+</code></pre></div><p>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the reversed() function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> reversed(range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>)):
+<span style="color:#f92672">...</span>  <span style="color:#66d9ef">print</span>(i)
+</code></pre></div><h1 id="sorting">Sorting</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted([<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>]) <span style="color:#75715e"># returns a new list</span>
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
 
-&gt;&gt;&gt; str.islower() # is lower/upper/title
-</code></pre>
-
-<h1 id="loops-and-iterations">Loops And Iterations</h1>
-
-<pre><code class="language-python">&gt;&gt;&gt; for item in [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]:
-&gt;&gt;&gt; for i in range(4):        # 0 to 3
-&gt;&gt;&gt; for i in range(4, 8):     # 4 to 7
-&gt;&gt;&gt; for i in range(1, 9, 2):  # 1, 3, 5, 7
-&gt;&gt;&gt; for key, val in dict.items():
-&gt;&gt;&gt; for index, item in enumerate(list):
-</code></pre>
-
-<p>To loop over two or more sequences at the same time, the entries can be paired with the zip() function.</p>
-
-<pre><code class="language-python">&gt;&gt;&gt; for q, a in zip(questions, answers):
-...  print('What is your {0}?  It is {1}.'.format(q, a))
-</code></pre>
-
-<p>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the reversed() function.</p>
-
-<pre><code class="language-python">&gt;&gt;&gt; for i in reversed(range(1, 10, 2)):
-...  print(i)
-</code></pre>
-
-<h1 id="sorting">Sorting</h1>
-
-<pre><code class="language-python">&gt;&gt;&gt; sorted([5, 2, 3, 1, 4]) # returns a new list
-[1, 2, 3, 4, 5]
-
-&gt;&gt;&gt; a = [5, 2, 3, 1, 4]
-&gt;&gt;&gt; a.sort() # in-place sort
-&gt;&gt;&gt; a
-[1, 2, 3, 4, 5]
-</code></pre>
-
-<h2 id="key-functions">Key Functions</h2>
-
+<span style="color:#f92672">&gt;&gt;&gt;</span> a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>]
+<span style="color:#f92672">&gt;&gt;&gt;</span> a<span style="color:#f92672">.</span>sort() <span style="color:#75715e"># in-place sort</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> a
+[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
+</code></pre></div><h2 id="key-functions">Key Functions</h2>
 <p>Key function takes a single argument and returns a key to use for sorting purposes.</p>
-
 <p>Case insesetive sorting using key function:</p>
-
-<pre><code class="language-python">&gt;&gt;&gt; sorted(&quot;This is a test string from Andrew&quot;.split(), key=str.lower)
-['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']
-</code></pre>
-
-<p>Sort by key of a tuple:</p>
-
-<pre><code class="language-python">&gt;&gt;&gt; student_tuples = [
-...  ('john', 'A', 15),
-...  ('jane', 'B', 12),
-...  ('dave', 'B', 10),
-... ]
-&gt;&gt;&gt; sorted(student_tuples, key=lambda student: student[2])
-[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
-</code></pre>
-
-<h1 id="extended-data-structures">Extended Data Structures</h1>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted(<span style="color:#e6db74">&#34;This is a test string from Andrew&#34;</span><span style="color:#f92672">.</span>split(), key<span style="color:#f92672">=</span>str<span style="color:#f92672">.</span>lower)
+[<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;Andrew&#39;</span>, <span style="color:#e6db74">&#39;from&#39;</span>, <span style="color:#e6db74">&#39;is&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>, <span style="color:#e6db74">&#39;test&#39;</span>, <span style="color:#e6db74">&#39;This&#39;</span>]
+</code></pre></div><p>Sort by key of a tuple:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> student_tuples <span style="color:#f92672">=</span> [
+<span style="color:#f92672">...</span>  (<span style="color:#e6db74">&#39;john&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#ae81ff">15</span>),
+<span style="color:#f92672">...</span>  (<span style="color:#e6db74">&#39;jane&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">12</span>),
+<span style="color:#f92672">...</span>  (<span style="color:#e6db74">&#39;dave&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">10</span>),
+<span style="color:#f92672">...</span> ]
+<span style="color:#f92672">&gt;&gt;&gt;</span> sorted(student_tuples, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> student: student[<span style="color:#ae81ff">2</span>])
+[(<span style="color:#e6db74">&#39;dave&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">10</span>), (<span style="color:#e6db74">&#39;jane&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">12</span>), (<span style="color:#e6db74">&#39;john&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#ae81ff">15</span>)]
+</code></pre></div><h1 id="extended-data-structures">Extended Data Structures</h1>
 <h2 id="queue">Queue</h2>
-
 <p>While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).
 To implement a queue, use collections.deque which was designed to have fast appends and pops from both ends. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+<span style="color:#f92672">&gt;&gt;&gt;</span> queue <span style="color:#f92672">=</span> deque([<span style="color:#e6db74">&#34;Eric&#34;</span>, <span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#e6db74">&#34;Michael&#34;</span>])
+<span style="color:#f92672">&gt;&gt;&gt;</span> queue<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#34;Terry&#34;</span>)           <span style="color:#75715e"># Terry arrives</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> queue<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#34;Graham&#34;</span>)          <span style="color:#75715e"># Graham arrives</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> queue<span style="color:#f92672">.</span>popleft()                 <span style="color:#75715e"># The first to arrive now leaves</span>
+<span style="color:#e6db74">&#39;Eric&#39;</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> queue<span style="color:#f92672">.</span>popleft()                 <span style="color:#75715e"># The second to arrive now leaves</span>
+<span style="color:#e6db74">&#39;John&#39;</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> queue                           <span style="color:#75715e"># Remaining queue in order of arrival</span>
+deque([<span style="color:#e6db74">&#39;Michael&#39;</span>, <span style="color:#e6db74">&#39;Terry&#39;</span>, <span style="color:#e6db74">&#39;Graham&#39;</span>])
+</code></pre></div><h2 id="linked-list">Linked List</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinkedList</span>:
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__ini__</span>(self):
+    self<span style="color:#f92672">.</span>head <span style="color:#f92672">=</span> None
+    self<span style="color:#f92672">.</span>tail <span style="color:#f92672">=</span> None
 
-<pre><code class="language-python">&gt;&gt;&gt; from collections import deque
-&gt;&gt;&gt; queue = deque([&quot;Eric&quot;, &quot;John&quot;, &quot;Michael&quot;])
-&gt;&gt;&gt; queue.append(&quot;Terry&quot;)           # Terry arrives
-&gt;&gt;&gt; queue.append(&quot;Graham&quot;)          # Graham arrives
-&gt;&gt;&gt; queue.popleft()                 # The first to arrive now leaves
-'Eric'
-&gt;&gt;&gt; queue.popleft()                 # The second to arrive now leaves
-'John'
-&gt;&gt;&gt; queue                           # Remaining queue in order of arrival
-deque(['Michael', 'Terry', 'Graham'])
-</code></pre>
-
-<h2 id="linked-list">Linked List</h2>
-
-<pre><code class="language-python">class LinkedList:
-  def __ini__(self):
-    self.head = None
-    self.tail = None
-
-  def append(self, node):
-    self.tail.next = node
-    self.tail = node
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">append</span>(self, node):
+    self<span style="color:#f92672">.</span>tail<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> node
+    self<span style="color:#f92672">.</span>tail <span style="color:#f92672">=</span> node
   
-  def prepend(self, node):
-    node.next = self.head
-    self.head = node
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">prepend</span>(self, node):
+    node<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>head
+    self<span style="color:#f92672">.</span>head <span style="color:#f92672">=</span> node
 
-class Node:
-  def __init__(self, val):
-    self.val = val,
-    self.next = None
-</code></pre>
-
-<h1 id="formulas">Formulas</h1>
-
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>:
+  <span style="color:#66d9ef">def</span> __init__(self, val):
+    self<span style="color:#f92672">.</span>val <span style="color:#f92672">=</span> val,
+    self<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> None
+</code></pre></div><h1 id="formulas">Formulas</h1>
 <p>Number of substrings of a string</p>
-
-<pre><code class="language-python">(n * (n + 1)) // 2 # where n is the number of characters
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(n <span style="color:#f92672">*</span> (n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># where n is the number of characters</span>
+</code></pre></div>
     </div>
-    
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://etcnotes.com/posts/system-call/">
-                <span class="button__icon">←</span>
-                <span class="button__text">How To Trace Your System Calls On Mac OS</span>
-              </a>
-            </span>
-          
-          
-        </div>
-      </div>
     
     
       <div class="comments">
@@ -483,10 +415,10 @@ class Node:
     
   </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <div class="copyright copyright--user"><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">All rights reserved</a>, 2019</div>
@@ -496,6 +428,7 @@ class Node:
 
 <script src="https://etcnotes.com/assets/main.js"></script>
 <script src="https://etcnotes.com/assets/prism.js"></script>
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132816408-1"></script>
 <script>
@@ -507,8 +440,9 @@ class Node:
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>

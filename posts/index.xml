@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on /etc/notes</title>
+    
+    
+    
     <link>https://etcnotes.com/posts/</link>
     <description>Recent content in Posts on /etc/notes</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -18,10 +21,17 @@
       <pubDate>Sat, 21 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://etcnotes.com/posts/pprof/</guid>
-      <description>Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof - a built-in profiling tool. There are several ways how to use it. We will check the easiest one.
-Check the full code example here.
-First of all, we need to import default pprof http endpoints:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/posts/pprof/pprof.png&#34;/&gt;
+          
+        
+        
+        
+          Pprof is a great tool to profile your golang applications. Let&#39;s find out how to use it...
+          
+        
+        </description>
     </item>
     
     <item>
@@ -30,8 +40,18 @@ import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
       
       <guid>https://etcnotes.com/posts/mysql2csv/</guid>
-      <description>If you need to convert mysql-client output as CSV here is a recipe
-alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  </description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          If you need to convert MySQL Client output as CSV here is a recipe
+          
+        
+        </description>
     </item>
     
     <item>
@@ -40,7 +60,17 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0300</pubDate>
       
       <guid>https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/</guid>
-      <description>Overview Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where we will use AggregatingMergeTree with Materialized View. Materialized View gets all data by a given query and AggregatingMergeTree aggregates inserted records by sorting key. With this approach, We can group data by some fields and it helps us optimize heavy queries for a long period.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/merge-tree.png&#34;/&gt;
+          
+        
+        
+        
+          We will talk about a way which allow us to make keep aggregated data.
+          
+        
+        </description>
     </item>
     
     <item>
@@ -49,9 +79,17 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0200</pubDate>
       
       <guid>https://etcnotes.com/posts/sre-2/</guid>
-      <description>Read Part 1: link
-Properties of good SLI metrics In this section, we will talk about how to choose good metrics(SLI). First of all, let&amp;rsquo;s think about our target. We need to make our users are happy. Good SLI should have some characteristics:
- predictable relationship with user happiness shows service is working as users expect to expressed as: good events / valid events aggregated over a long time horizon  How do you think why the upper metric is bad?</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/sre.png&#34;/&gt;
+          
+        
+        
+        
+          This is 2-nd part of a review for &#34;Site Reliability Engineering: Measuring and Managing Reliability&#34; course on Coursera by Google
+          
+        
+        </description>
     </item>
     
     <item>
@@ -60,7 +98,17 @@ Properties of good SLI metrics In this section, we will talk about how to choose
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0200</pubDate>
       
       <guid>https://etcnotes.com/posts/sstable-and-lsm/</guid>
-      <description>Hash Table What is Key-Value storage? First, you could think about Dictionary and Hash-Map depends what is your favorite programming language. So our first implementation will be Hash-index. Hash-Map good fit into memory. What about data storage? Let&amp;rsquo;s say our storage is an opened file where we can write in append mode. Then we can use Hash-Map values as an offset in the file when we insert or update a new value.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/posts/sstable-and-lsm/sparse-index.png&#34;/&gt;
+          
+        
+        
+        
+          We&#39;re talking about LSM-tree and SSTable as a storage. Why do we need it and how to implement it?
+          
+        
+        </description>
     </item>
     
     <item>
@@ -69,9 +117,17 @@ Properties of good SLI metrics In this section, we will talk about how to choose
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0200</pubDate>
       
       <guid>https://etcnotes.com/posts/sre/</guid>
-      <description>DevOps vs SRE The definition of SRE (Site Reliability Engineering) sounds like DevOps, but if we consider DevOps as a philosophy, then SRE is a concrete the implementation of this philosophy.
-DevOps is broken into 5 key areas:
- Reduce Organization Silos Accept Failure as Normal Implement Gradual Change Leverage Tooling and Automation Measure Everything  Let&amp;rsquo;s imagine that these pillars are an interface for a class. Then implementation of SRE are:</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/sre.png&#34;/&gt;
+          
+        
+        
+        
+          This is a review for &#34;Site Reliability Engineering: Measuring and Managing Reliability&#34; course on Coursera by Google
+          
+        
+        </description>
     </item>
     
     <item>
@@ -80,8 +136,17 @@ DevOps is broken into 5 key areas:
       <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
       
       <guid>https://etcnotes.com/posts/system-call/</guid>
-      <description>DTruss DTruss is analog of strace in linux and uses DTrase for it. It allows you to trace system calls from a running process or run a process with tracing.
-Note But from past versions of Mac OS, some paths are protected by SIP(System Integrity Protection) (i.e. /usr/bin) and cannot be traced. But there is a workaround, to change settings in recovery mode but I would not recommend it to you.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/instruments.png&#34;/&gt;
+          
+        
+        
+        
+          dtruss is analog of strace in linux. It allows you to trace system calls from a running process or run a process with tracing. Also we are take a look on an alternative way.
+          
+        
+        </description>
     </item>
     
     <item>
@@ -90,7 +155,17 @@ Note But from past versions of Mac OS, some paths are protected by SIP(System In
       <pubDate>Tue, 08 Jan 2019 00:00:00 +0200</pubDate>
       
       <guid>https://etcnotes.com/posts/python/</guid>
-      <description>Basic operations &amp;gt;&amp;gt;&amp;gt; 3 / 2 1.5 &amp;gt;&amp;gt;&amp;gt; 3 // 2 1 &amp;gt;&amp;gt;&amp;gt; 3 ** 2 9 &amp;gt;&amp;gt;&amp;gt; abs(-1) 1  Basic Data Structures List Ordered Changable Duplicates  &amp;gt;&amp;gt;&amp;gt; list = [] &amp;gt;&amp;gt;&amp;gt; list = [i:j] # returns list subset &amp;gt;&amp;gt;&amp;gt; list = [-1] # returns last element &amp;gt;&amp;gt;&amp;gt; list[i] = val &amp;gt;&amp;gt;&amp;gt; list[i:j] = otherlist # replace ith to jth element with otherlist &amp;gt;&amp;gt;&amp;gt; del list[i:j] &amp;gt;&amp;gt;&amp;gt; list.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/python.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Cheat sheet for quick solving your cases on HackerRank
+          
+        
+        </description>
     </item>
     
   </channel>

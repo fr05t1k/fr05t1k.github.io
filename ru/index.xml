@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>/etc/notes</title>
+    
+    
+    
     <link>https://etcnotes.com/ru/</link>
     <description>Recent content on /etc/notes</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -18,11 +21,17 @@
       <pubDate>Sat, 21 Sep 2019 00:00:00 +0300</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/pprof/</guid>
-      <description>Установка Go Tools содержат набор отличных инструментов прямо из коробки. Сегодня мы поговорим об одном из низ. Pprof - встроеный инструмент для профилирования приложений. Есть несколько способов его использования. Мы рассмотрим самый простой.
-Исходный код примера вы можете найти здесь
-Для начала нам нужно подключить стандарные http обработчики:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  Если вы не используете http в своем приложнии, вы можете запустить http отдельно:
-package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&amp;quot; ) func main () { http.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/posts/pprof/pprof.png&#34;/&gt;
+          
+        
+        
+        
+          Pprof отличный инструмент для отлажиния ваших golang приложений. Давайте разберемся как его использовать...
+          
+        
+        </description>
     </item>
     
     <item>
@@ -31,8 +40,18 @@ package main import ( &amp;quot;net/http&amp;quot; _ &amp;quot;net/http/pprof&am
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/mysql2csv/</guid>
-      <description>Если вам нужно конвертировать вывод mysql-client в CSV вот рецепт
-alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g;s/\t/&amp;quot;,&amp;quot;/g;s/^/&amp;quot;/;s/$/&amp;quot;/;s/\n//g&#39;\&#39;&#39;&#39; mytsql -e &amp;quot;select * from users&amp;quot; | mysql2csv  </description>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Если вам нужно конвертировать вывод mysql-client в CSV вот рецепт
+          
+        
+        </description>
     </item>
     
     <item>
@@ -41,7 +60,17 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0300</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</guid>
-      <description>Overview Clickhouse достаточно быстрое хранилище, но когда ваше хранилище перерастает тот момент, когда агрегированные запросы по сырым данным выполняются медленно. В этот момент мы начинаем задумываться об оптимизации. Сегодня я хочу рассказать о подходе где мы будем использоваться AggregatingMergeTree. Materialized View получает все данные по определенному запросу который вы указываете при создании и AggregatingMergeTree агрегирует эти данные по ключу сортировки. Используя этот подход, мы можем группировать данные по определенным полям и это позволит делать тяжелые запросы по большому промежутку времени.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/merge-tree.png&#34;/&gt;
+          
+        
+        
+        
+          Мы поговорим о способе оптимизации агрегированных запросов и хранении их резальтатов.
+          
+        
+        </description>
     </item>
     
     <item>
@@ -50,7 +79,17 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0200</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/sstable-and-lsm/</guid>
-      <description>Хэш-таблица Что первое приходит в голову при упоминании Ключ-значения хранилища? Думаю у большинства в голове всплывает Словарь или Хэш-таблица зависит от вашего языка. Итак, первой имплементацией будет Хэш-индекс. Он хорошо вписывается в память. Но что на счет постоянного хранилища? Давай-те представим открытый файл в который мы пишем в конец. В этой концепции мы можем представить значения в Хэш-таблице как смещение в этом файле когда мы вставляем или обновляем данные.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/posts/sstable-and-lsm/sparse-index.png&#34;/&gt;
+          
+        
+        
+        
+          Мы поговорим о LSM-деревьях и SSTable как о хранилищах. Зачем они нужны и как они реализуются
+          
+        
+        </description>
     </item>
     
     <item>
@@ -59,8 +98,17 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
       <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/system-call/</guid>
-      <description>DTruss DTruss это аналог strace на linux системах, использующая DTrase для этого. Эта утилита позволяет вам отслеживать системные вызовы у запушенного процесса, либо запустить процесс и отследживать его вызовы.
-Замечание В последних версия Mac OS некоторые пути из которых запущены процессы находятся под защитой SIP (System Integrity Protection), которая запрещает отслеживание системных вызовов, например путь /usr/bin. Есть выход, который я бы не рекомендовал вам. Можно отключить для некоторых процессов эту защиту в recovery mode вашей системы.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/instruments.png&#34;/&gt;
+          
+        
+        
+        
+          DTruss это аналог strace на linux системах, использующая DTrase для отслеживания системных выозовов. Мы также рассмотрим альтернативный метод.
+          
+        
+        </description>
     </item>
     
     <item>
@@ -69,7 +117,17 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
       <pubDate>Tue, 08 Jan 2019 00:00:00 +0200</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/python/</guid>
-      <description>Основные операторы &amp;gt;&amp;gt;&amp;gt; 3 / 2 1.5 &amp;gt;&amp;gt;&amp;gt; 3 // 2 1 &amp;gt;&amp;gt;&amp;gt; 3 ** 2 9 &amp;gt;&amp;gt;&amp;gt; abs(-1) 1  Основные структуры данных List (Список) Сортированный Изменяемый Содержит дубликаты  &amp;gt;&amp;gt;&amp;gt; list = [] &amp;gt;&amp;gt;&amp;gt; list = [i:j] # возвращает часть списка &amp;gt;&amp;gt;&amp;gt; list = [-1] # возвращает последний элемент &amp;gt;&amp;gt;&amp;gt; list[i] = val &amp;gt;&amp;gt;&amp;gt; list[i:j] = otherlist # замена с i-ого по j-ый element новым списком otherlist &amp;gt;&amp;gt;&amp;gt; del list[i:j] &amp;gt;&amp;gt;&amp;gt; list.</description>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/python.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Cheat sheet для решения задачек на HackerRank
+          
+        
+        </description>
     </item>
     
     <item>
@@ -78,11 +136,22 @@ alias mysql2csv=&#39;sed &#39;\&#39;&#39;s/\,/\\,/g;s/\&amp;quot;/\\&amp;quot;/g
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://etcnotes.com/ru/about/</guid>
-      <description> Привет тут Меня зовут Стас и я разработчик програмного обеспечения.
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Меня зовут Стас и я разработчик програмного обеспечения.
 Я делюсь своей рутиной. Это помогает мне лучше запоминать информацию, когда я объясняю ее кому-то. Возможно вы найдете некоторые статьи полезные для себя.
 Хочу сразу попросить прощения за граматику в тексте :)
 Мои контакты:
- LinkedIn GitHub Email  </description>
+ LinkedIn GitHub Email  
+          
+        
+        </description>
     </item>
     
   </channel>

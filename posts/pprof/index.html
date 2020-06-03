@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>PPROF. Profiling Golang Applications. :: /etc/notes — A personal blod about software engineering</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>PPROF. Profiling Golang Applications. :: /etc/notes — A personal blod about software engineering</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof - a built-in profiling tool. There are several ways how to use it. We will check the easiest one.
-Check the full code example here.
+<meta name="description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof
+ a built-in profiling tool. There are several ways how to use it. We will check the easiest one.  Check the full code example here.
 First of all, we need to import default pprof http endpoints:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:"/>
+import ( _ &amp;#34;net/http/pprof&amp;#34; ) If you don&amp;rsquo;t use http in your application you can just run it standalone:"/>
 <meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://etcnotes.com/posts/pprof/" />
+
+
+
 
 
 <link rel="stylesheet" href="https://etcnotes.com/assets/style.css">
@@ -30,47 +33,33 @@ import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http
 
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="PPROF. Profiling Golang Applications. :: /etc/notes — A personal blod about software engineering" />
-<meta name="twitter:description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof - a built-in profiling tool. There are several ways how to use it. We will check the easiest one.
-Check the full code example here.
-First of all, we need to import default pprof http endpoints:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:" />
-<meta name="twitter:site" content="https://etcnotes.com/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="https://etcnotes.com/posts/pprof/pprof.png">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PPROF. Profiling Golang Applications."/>
+<meta name="twitter:description" content="Pprof is a great tool to profile your golang applications. Let&#39;s find out how to use it..."/>
 
 
-<meta property="og:locale" content="en" />
+
+<meta property="og:title" content="PPROF. Profiling Golang Applications." />
+<meta property="og:description" content="Pprof is a great tool to profile your golang applications. Let&#39;s find out how to use it..." />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="PPROF. Profiling Golang Applications. :: /etc/notes — A personal blod about software engineering">
-<meta property="og:description" content="Setup Go Tools provide quite a lot of built-in instruments out of the box. Today we&amp;rsquo;re going to talk about one of them. Pprof - a built-in profiling tool. There are several ways how to use it. We will check the easiest one.
-Check the full code example here.
-First of all, we need to import default pprof http endpoints:
-import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http in your application you can just run it standalone:" />
 <meta property="og:url" content="https://etcnotes.com/posts/pprof/" />
-<meta property="og:site_name" content="PPROF. Profiling Golang Applications." />
-<meta property="og:image" content="https://etcnotes.com/posts/pprof/pprof.png">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2019-09-21 00:00:00 &#43;0300 EEST" />
+<meta property="article:published_time" content="2019-09-21T00:00:00+03:00" />
+<meta property="article:modified_time" content="2019-09-21T00:00:00+03:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
 
 
 
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">/etc/notes</span>
@@ -136,154 +125,112 @@ import ( _ &amp;quot;net/http/pprof&amp;quot; )  If you don&amp;rsquo;t use http
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
+  
+  
+
   <div class="post">
-    <h2 class="post-title"><a href="https://etcnotes.com/posts/pprof/">PPROF. Profiling Golang Applications.</a></h2>
+    <h1 class="post-title"><a href="https://etcnotes.com/posts/pprof/">PPROF. Profiling Golang Applications.</a></h1>
     <div class="post-meta">
       
         <span class="post-date">
-            2019-09-21
+          2019-09-21
         </span>
+
+        
+          
+        
+      
+
       
       
     </div>
 
     
-      <span class="post-tags">
-        
-          #<a href="https://etcnotes.com/tags/golang">golang</a>&nbsp;
-        
-          #<a href="https://etcnotes.com/tags/doc">doc</a>&nbsp;
-        
-      </span>
-    
 
     
-      <img src="https://etcnotes.com/posts/pprof/pprof.png" class="post-cover" />
+      
+        <img src="https://etcnotes.com/posts/pprof/pprof.png" class="post-cover" />
+      
     
 
     
 
     <div class="post-content">
       
-
-<h1 id="setup">Setup</h1>
-
-<p>Go Tools provide quite a lot of built-in instruments out of the box. Today we&rsquo;re going to talk about one of them. Pprof
-- a built-in profiling tool. There are several ways how to use it. We will check the easiest one.</p>
-
+      <h1 id="setup">Setup</h1>
+<p>Go Tools provide quite a lot of built-in instruments out of the box. Today we&rsquo;re going to talk about one of them. Pprof</p>
+<ul>
+<li>a built-in profiling tool. There are several ways how to use it. We will check the easiest one.</li>
+</ul>
 <p>Check the full code example <a href="https://github.com/fr05t1k/pprof-example">here</a>.</p>
-
 <p>First of all, we need to import default pprof http endpoints:</p>
-
-<pre><code class="language-go">import (
-	_ &quot;net/http/pprof&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
+	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;net/http/pprof&#34;</span>
 )
-</code></pre>
+</code></pre></div><p>If you don&rsquo;t use http in your application you can just run it standalone:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-<p>If you don&rsquo;t use http in your application you can just run it standalone:</p>
-
-<pre><code class="language-go">package main
-
-import (
-	&quot;net/http&quot;
-	_ &quot;net/http/pprof&quot;
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;net/http&#34;</span>
+	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;net/http/pprof&#34;</span>
 )
 
-func main () {
-    http.ListenAndServe(&quot;:8081&quot;, nil)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span> () {
+    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8081&#34;</span>, <span style="color:#66d9ef">nil</span>)
 }
-</code></pre>
-
-<p><code>net/http/pprof</code> has init function with default handlers which can show use basics information about runtime.</p>
-
-<pre><code class="language-go">func init() {
-	http.HandleFunc(&quot;/debug/pprof/&quot;, Index)
-	http.HandleFunc(&quot;/debug/pprof/cmdline&quot;, Cmdline)
-	http.HandleFunc(&quot;/debug/pprof/profile&quot;, Profile)
-	http.HandleFunc(&quot;/debug/pprof/symbol&quot;, Symbol)
-	http.HandleFunc(&quot;/debug/pprof/trace&quot;, Trace)
+</code></pre></div><p><code>net/http/pprof</code> has init function with default handlers which can show use basics information about runtime.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">init</span>() {
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/&#34;</span>, <span style="color:#a6e22e">Index</span>)
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/cmdline&#34;</span>, <span style="color:#a6e22e">Cmdline</span>)
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/profile&#34;</span>, <span style="color:#a6e22e">Profile</span>)
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/symbol&#34;</span>, <span style="color:#a6e22e">Symbol</span>)
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/trace&#34;</span>, <span style="color:#a6e22e">Trace</span>)
 }
-</code></pre>
-
-<p>Let&rsquo;s check the index page. Open <code>127.0.0.1:8081/debug/pprof/</code> in your browser. This page explains in details functional
+</code></pre></div><p>Let&rsquo;s check the index page. Open <code>127.0.0.1:8081/debug/pprof/</code> in your browser. This page explains in details functional
 of other pages, but we&rsquo;re interested in <code>profile</code> and <code>heap</code>.</p>
-
 <ul>
 <li>profile - CPU Profile</li>
 <li>head - Memory Allocation Profile</li>
 </ul>
 
-
   <img src="/posts/pprof/debug-page.png"  alt="pprof debug page"  class="left"  />
-
 
 
 <p>Now you can run pprof for a while and check what was going on at this period. Let&rsquo;s run CPU profiling for
 30 seconds.</p>
-
-<pre><code class="language-bash">go tool pprof -http=&quot;:9090&quot; -seconds=30 http://localhost:8081/debug/pprof/profile
-</code></pre>
-
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go tool pprof -http<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:9090&#34;</span> -seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> http://localhost:8081/debug/pprof/profile
+</code></pre></div>
   <img src="/posts/pprof/graph.png"  alt="pprof graph page"  class="left"  />
 
 
-
 <p>Each block looks like <code>main generateRandomText 0.01s (0.17%) of 1.92s (32.49%)</code> Where</p>
-
 <ul>
 <li>main - a package name</li>
 <li>generateRandomText - a function name</li>
 <li>0.01s (0.17%) - how long the function takes the time (without processing called functions inside)</li>
 <li>1.92s (32.49%) - how long the function takes in total</li>
 </ul>
-
 <p>There is another useful presentation (my favorite) - <a href="http://www.brendangregg.com/flamegraphs.html">Flame graph</a>. The X-axis shows how
 long a function is working. The Y-axis shows call stack.</p>
-
 
   <img src="/posts/pprof/pprof.png"  alt="pprof flame graph page"  class="left"  />
 
 
-
 <h1 id="conclusion">Conclusion</h1>
-
 <p>This is the tip of the iceberg. PProf is a powerful tool for profile golang applications (not only) which allows easily
 to find problems in your code.</p>
-
-<h2 id="p-s">P.S.</h2>
-
+<h2 id="ps">P.S.</h2>
 <p>If you use Goland by JetBrains you are lucky to have the ability to run profile right from your lovely IDE. Check
 <a href="https://blog.jetbrains.com/go/2019/04/03/profiling-go-applications-and-tests/">this</a> out how cool it is.</p>
-
 <h1 id="read-more">Read more</h1>
-
 <ul>
 <li><a href="https://blog.golang.org/profiling-go-programs">Official blog</a></li>
 <li><a href="https://github.com/google/pprof">Source code and documentation</a></li>
 </ul>
 
     </div>
-    
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          
-          
-            <span class="button next">
-              <a href="https://etcnotes.com/posts/mysql2csv/">
-                <span class="button__text">MySQL client out as CSV</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
     
     
       <div class="comments">
@@ -311,10 +258,10 @@ to find problems in your code.</p>
     
   </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <div class="copyright copyright--user"><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">All rights reserved</a>, 2019</div>
@@ -324,6 +271,7 @@ to find problems in your code.</p>
 
 <script src="https://etcnotes.com/assets/main.js"></script>
 <script src="https://etcnotes.com/assets/prism.js"></script>
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132816408-1"></script>
 <script>
@@ -335,8 +283,9 @@ to find problems in your code.</p>
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>

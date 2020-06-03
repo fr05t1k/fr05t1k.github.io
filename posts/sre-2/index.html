@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>Site Reliability Engineering: Measuring and Managing Reliability (part 2) :: /etc/notes — A personal blod about software engineering</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>Site Reliability Engineering: Measuring and Managing Reliability (part 2) :: /etc/notes — A personal blod about software engineering</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="Read Part 1: link
 Properties of good SLI metrics In this section, we will talk about how to choose good metrics(SLI). First of all, let&amp;rsquo;s think about our target. We need to make our users are happy. Good SLI should have some characteristics:
@@ -12,6 +12,9 @@ Properties of good SLI metrics In this section, we will talk about how to choose
 <meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://etcnotes.com/posts/sre-2/" />
+
+
+
 
 
 <link rel="stylesheet" href="https://etcnotes.com/assets/style.css">
@@ -29,45 +32,33 @@ Properties of good SLI metrics In this section, we will talk about how to choose
 
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Site Reliability Engineering: Measuring and Managing Reliability (part 2) :: /etc/notes — A personal blod about software engineering" />
-<meta name="twitter:description" content="Read Part 1: link
-Properties of good SLI metrics In this section, we will talk about how to choose good metrics(SLI). First of all, let&amp;rsquo;s think about our target. We need to make our users are happy. Good SLI should have some characteristics:
- predictable relationship with user happiness shows service is working as users expect to expressed as: good events / valid events aggregated over a long time horizon  How do you think why the upper metric is bad?" />
-<meta name="twitter:site" content="https://etcnotes.com/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="https://etcnotes.com/img/sre.png">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Site Reliability Engineering: Measuring and Managing Reliability (part 2)"/>
+<meta name="twitter:description" content="This is 2-nd part of a review for &#34;Site Reliability Engineering: Measuring and Managing Reliability&#34; course on Coursera by Google"/>
 
 
-<meta property="og:locale" content="en" />
+
+<meta property="og:title" content="Site Reliability Engineering: Measuring and Managing Reliability (part 2)" />
+<meta property="og:description" content="This is 2-nd part of a review for &#34;Site Reliability Engineering: Measuring and Managing Reliability&#34; course on Coursera by Google" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Site Reliability Engineering: Measuring and Managing Reliability (part 2) :: /etc/notes — A personal blod about software engineering">
-<meta property="og:description" content="Read Part 1: link
-Properties of good SLI metrics In this section, we will talk about how to choose good metrics(SLI). First of all, let&amp;rsquo;s think about our target. We need to make our users are happy. Good SLI should have some characteristics:
- predictable relationship with user happiness shows service is working as users expect to expressed as: good events / valid events aggregated over a long time horizon  How do you think why the upper metric is bad?" />
 <meta property="og:url" content="https://etcnotes.com/posts/sre-2/" />
-<meta property="og:site_name" content="Site Reliability Engineering: Measuring and Managing Reliability (part 2)" />
-<meta property="og:image" content="https://etcnotes.com/img/sre.png">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2019-02-01 00:00:00 &#43;0200 EET" />
+<meta property="article:published_time" content="2019-02-01T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-02-01T00:00:00+02:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
 
 
 
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">/etc/notes</span>
@@ -133,15 +124,24 @@ Properties of good SLI metrics In this section, we will talk about how to choose
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
+  
+  
+
   <div class="post">
-    <h2 class="post-title"><a href="https://etcnotes.com/posts/sre-2/">Site Reliability Engineering: Measuring and Managing Reliability (part 2)</a></h2>
+    <h1 class="post-title"><a href="https://etcnotes.com/posts/sre-2/">Site Reliability Engineering: Measuring and Managing Reliability (part 2)</a></h1>
     <div class="post-meta">
       
         <span class="post-date">
-            2019-02-01
+          2019-02-01
         </span>
+
+        
+          
+        
+      
+
       
       
     </div>
@@ -149,45 +149,56 @@ Properties of good SLI metrics In this section, we will talk about how to choose
     
 
     
-      <img src="https://etcnotes.com/img/sre.png" class="post-cover" />
+      
+        <img src="https://etcnotes.com/img/sre.png" class="post-cover" />
+      
     
 
     
       <div class="table-content">
         <h1>Table Of Content</h1>
         <nav id="TableOfContents">
-<ul>
-<li><a href="#properties-of-good-sli-metrics">Properties of good SLI metrics</a></li>
-<li><a href="#ways-of-measuring-slis">Ways of measuring SLIs</a>
-<ul>
-<li><a href="#request-logs">Request logs</a></li>
-<li><a href="#application-metrics">Application metrics</a></li>
-<li><a href="#front-end-infra-metrics">Front-end infra metrics</a></li>
-<li><a href="#synthetic-clients">Synthetic clients</a></li>
-<li><a href="#client-side-instrumentation">Client-side instrumentation</a></li>
-</ul></li>
-<li><a href="#data-processing-slis">Data processing SLIs</a>
-<ul>
-<li><a href="#freshness">Freshness</a></li>
-<li><a href="#correctness">Correctness</a></li>
-<li><a href="#coverage">Coverage</a></li>
-<li><a href="#throughput">Throughput</a></li>
-</ul></li>
-<li><a href="#setting-reliable-targets">Setting Reliable Targets</a></li>
-</ul>
+  <ul>
+    <li><a href="#request-logs">Request logs</a></li>
+    <li><a href="#application-metrics">Application metrics</a></li>
+    <li><a href="#front-end-infra-metrics">Front-end infra metrics</a></li>
+    <li><a href="#synthetic-clients">Synthetic clients</a></li>
+    <li><a href="#client-side-instrumentation">Client-side instrumentation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#freshness">Freshness</a></li>
+    <li><a href="#correctness">Correctness</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#throughput">Throughput</a></li>
+  </ul>
 </nav>
       </div>
     
 
     <div class="post-content">
       
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#request-logs">Request logs</a></li>
+    <li><a href="#application-metrics">Application metrics</a></li>
+    <li><a href="#front-end-infra-metrics">Front-end infra metrics</a></li>
+    <li><a href="#synthetic-clients">Synthetic clients</a></li>
+    <li><a href="#client-side-instrumentation">Client-side instrumentation</a></li>
+  </ul>
 
-<p>Read Part 1: <a href="/posts/sre">link</a></p>
-
+  <ul>
+    <li><a href="#freshness">Freshness</a></li>
+    <li><a href="#correctness">Correctness</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#throughput">Throughput</a></li>
+  </ul>
+</nav></aside>
+      
+      <p>Read Part 1: <a href="/posts/sre">link</a></p>
 <h1 id="properties-of-good-sli-metrics">Properties of good SLI metrics</h1>
-
 <p>In this section, we will talk about how to choose good metrics(SLI). First of all, let&rsquo;s think about our target. We need to make our users are happy. Good SLI should have some characteristics:</p>
-
 <ul>
 <li>predictable relationship with user happiness</li>
 <li>shows service is working as users expect to</li>
@@ -195,91 +206,38 @@ Properties of good SLI metrics In this section, we will talk about how to choose
 <li>aggregated over a long time horizon</li>
 </ul>
 
-
   <img src="/posts/sre/good-bad-sli.png"  alt="Good and Bad SLI"  class="left"  />
 
 
-
 <p>How do you think why the upper metric is bad? Firstly, it makes a relationship with happiness unpredictable. Secondly, it is hard to measure it accurately. For bad metrics, it&rsquo;s hard to make a threshold between normal operations and during the outage because it has a high chance to get false positive or false negative results.</p>
-
 <h1 id="ways-of-measuring-slis">Ways of measuring SLIs</h1>
-
 <p>There are 5 ways to measure SLI. Each of them has pros and cons.</p>
-
 <h2 id="request-logs">Request logs</h2>
-
 <p>It allows retroactively fill your SLI if you have not been measuring it directly. But it has significant latency between event occurred and measured it in your SLI. It&rsquo;s unsuitable for emergency response.</p>
-
 <h2 id="application-metrics">Application metrics</h2>
-
 <p>Application metrics do not measure multi-request sessions but only one request scope because it&rsquo;s difficult to export them from stateless servers.</p>
-
 <h2 id="front-end-infra-metrics">Front-end infra metrics</h2>
-
 <p>You can measure metrics from your front-end balancer. It&rsquo;s the closest place to a user which in your control. You or your cloud provider will have detailed historical metrics. This approach does not require the engineering effort to get started. The cons are these servers are stateless and they don&rsquo;t have insight into the response data. They must rely on the meta response envelope that these responses are good.</p>
-
 <h2 id="synthetic-clients">Synthetic clients</h2>
-
 <p>Synthetic clients are good to check that your service works as expected in general cases but user behavior often is unpredictable and you cannot fully rely on that metrics. Covering all scenarios could require huge development investment.</p>
-
 <h2 id="client-side-instrumentation">Client-side instrumentation</h2>
-
 <p>Finally, you can go to the source of user experience and measure it on client-side which provides more accurate measurements. In this case, many factors lay down out of your controls, especially on mobile devices.</p>
-
 <h1 id="data-processing-slis">Data processing SLIs</h1>
-
 <p>We will cover some types for SLI which could be useful in your system.</p>
-
 <h2 id="freshness">Freshness</h2>
-
 <p>When we bach process data it is a good idea to measure threshold between when you get data and you show it to your customers. It could be expressed as <em>the proportion of valid data updated more recently than a threshold</em></p>
-
 <h2 id="correctness">Correctness</h2>
-
 <p>Correctness is expressed as <em>the proportion of valid data producing correct output</em>. We need to choose a valid input and compare a given output with a valid output.</p>
-
 <h2 id="coverage">Coverage</h2>
-
 <p>Coverage is expressed as <em>the proportion of valid data processed successfully</em>. In this case, we need to determine how many requests we processed successfully.</p>
-
 <h2 id="throughput">Throughput</h2>
-
 <p><em>The proportion of time where the data processing rate is faster than a threshold</em>. If throughput is falling down you might violate someone&rsquo;s expectation.</p>
-
 <h1 id="setting-reliable-targets">Setting Reliable Targets</h1>
-
 <p>Therefore after choosing our SLIs how to choose targets for them? First of all, you already have metrics and you have users let&rsquo;s consider that your users are happy now. It&rsquo;s a great way to get started. You can check historical data and choose what you believe a good SLI. If you don&rsquo;t have historical data start gathering it after some period of time you can choose the right targets. SLOs based on historical data are called <em>achievable SLOs</em>. The disadvantage of these that you have to be sure that your users are happy with the past experience.</p>
-
 <p><em>Aspirational SLOs</em> are SLOs which based on business requirements. If you know that your users are unhappy you need to set you <em>aspirational SLOs</em> higher than your <em>achievable SLOs</em>. If you don&rsquo;t have historical data at all try to ask your product team which SLOs make users happy.</p>
-
 <p>More important to start gathering data and set reasonable targets that setting right targets at the first time. Because you need to adjust your targets regularly.</p>
 
     </div>
-    
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/">
-                <span class="button__icon">←</span>
-                <span class="button__text">How to optimize aggregate queries in Clickhouse?</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="https://etcnotes.com/posts/sstable-and-lsm/">
-                <span class="button__text">SSTable and LSM-trees. How to store Key-Value storage on the disk?</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
     
     
       <div class="comments">
@@ -307,10 +265,10 @@ Properties of good SLI metrics In this section, we will talk about how to choose
     
   </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <div class="copyright copyright--user"><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">All rights reserved</a>, 2019</div>
@@ -320,6 +278,7 @@ Properties of good SLI metrics In this section, we will talk about how to choose
 
 <script src="https://etcnotes.com/assets/main.js"></script>
 <script src="https://etcnotes.com/assets/prism.js"></script>
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132816408-1"></script>
 <script>
@@ -331,8 +290,9 @@ Properties of good SLI metrics In this section, we will talk about how to choose
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>

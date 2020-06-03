@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-    <title>How to optimize aggregate queries in Clickhouse? :: /etc/notes — A personal blod about software engineering</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <head>
+    
+      <title>How to optimize aggregate queries in Clickhouse? :: /etc/notes — A personal blod about software engineering</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="Overview Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where we will use AggregatingMergeTree with Materialized View. Materialized View gets all data by a given query and AggregatingMergeTree aggregates inserted records by sorting key. With this approach, We can group data by some fields and it helps us optimize heavy queries for a long period."/>
 <meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/" />
+
+
+
 
 
 <link rel="stylesheet" href="https://etcnotes.com/assets/style.css">
@@ -27,41 +30,33 @@
 
 
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="How to optimize aggregate queries in Clickhouse? :: /etc/notes — A personal blod about software engineering" />
-<meta name="twitter:description" content="Overview Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where we will use AggregatingMergeTree with Materialized View. Materialized View gets all data by a given query and AggregatingMergeTree aggregates inserted records by sorting key. With this approach, We can group data by some fields and it helps us optimize heavy queries for a long period." />
-<meta name="twitter:site" content="https://etcnotes.com/" />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image" content="https://etcnotes.com/img/merge-tree.png">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to optimize aggregate queries in Clickhouse?"/>
+<meta name="twitter:description" content="We will talk about a way which allow us to make keep aggregated data."/>
 
 
-<meta property="og:locale" content="en" />
+
+<meta property="og:title" content="How to optimize aggregate queries in Clickhouse?" />
+<meta property="og:description" content="We will talk about a way which allow us to make keep aggregated data." />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="How to optimize aggregate queries in Clickhouse? :: /etc/notes — A personal blod about software engineering">
-<meta property="og:description" content="Overview Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where we will use AggregatingMergeTree with Materialized View. Materialized View gets all data by a given query and AggregatingMergeTree aggregates inserted records by sorting key. With this approach, We can group data by some fields and it helps us optimize heavy queries for a long period." />
 <meta property="og:url" content="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/" />
-<meta property="og:site_name" content="How to optimize aggregate queries in Clickhouse?" />
-<meta property="og:image" content="https://etcnotes.com/img/merge-tree.png">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2019-04-24 00:00:00 &#43;0300 EEST" />
+<meta property="article:published_time" content="2019-04-24T00:00:00+03:00" />
+<meta property="article:modified_time" content="2019-04-24T00:00:00+03:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
 
 
 
-
-</head>
-<body class="dark-theme">
-<div class="container">
-  <header class="header">
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
   <span class="header__inner">
     <a href="/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
-  <polyline fill="none" stroke="#000" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
 </span>
     <span class="logo__text">/etc/notes</span>
@@ -127,55 +122,57 @@
 </header>
 
 
-  <div class="content">
-    
+      <div class="content">
+        
+  
+  
+
   <div class="post">
-    <h2 class="post-title"><a href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/">How to optimize aggregate queries in Clickhouse?</a></h2>
+    <h1 class="post-title"><a href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/">How to optimize aggregate queries in Clickhouse?</a></h1>
     <div class="post-meta">
       
         <span class="post-date">
-            2019-04-24
+          2019-04-24
         </span>
+
+        
+          
+        
+      
+
       
       
     </div>
 
     
-      <span class="post-tags">
-        
-          #<a href="https://etcnotes.com/tags/howto">howto</a>&nbsp;
-        
-          #<a href="https://etcnotes.com/tags/doc">doc</a>&nbsp;
-        
-      </span>
-    
 
     
-      <img src="https://etcnotes.com/img/merge-tree.png" class="post-cover" />
+      
+        <img src="https://etcnotes.com/img/merge-tree.png" class="post-cover" />
+      
     
 
     
       <div class="table-content">
         <h1>Table Of Content</h1>
         <nav id="TableOfContents">
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#how-to">How to</a>
-<ul>
-<li><a href="#aggregate-function-combinators">Aggregate function combinators</a></li>
-</ul></li>
-<li><a href="#populate">Populate</a></li>
-<li><a href="#summary">Summary</a></li>
-</ul>
+  <ul>
+    <li><a href="#aggregate-function-combinators">Aggregate function combinators</a></li>
+  </ul>
 </nav>
       </div>
     
 
     <div class="post-content">
       
-
-<h1 id="overview">Overview</h1>
-
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#aggregate-function-combinators">Aggregate function combinators</a></li>
+  </ul>
+</nav></aside>
+      
+      <h1 id="overview">Overview</h1>
 <p>Clickhouse is quite fast storage, but when your storage is huge enough searching and aggregating in raw data become quite
 expensive. In this case you would think about optimization some queries. Today I would like to talk about a way where
 we will use <a href="https://clickhouse.yandex/docs/en/operations/table_engines/aggregatingmergetree/">AggregatingMergeTree</a>
@@ -184,10 +181,8 @@ View</em> gets all data by a given query and <em>AggregatingMergeTree</em> aggre
 approach, We can group data by some fields and it helps us optimize heavy queries for a long period. Most important things,
 the optimization rate is a proportion of all records with unique records in the materialized view. It tells how fast
 your optimization will work.</p>
-
 <h1 id="how-to">How to</h1>
-
-<pre><code class="language-sql">CREATE TABLE views
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> views
 (
   id                UInt64,
   manager           UInt64,
@@ -197,14 +192,14 @@ your optimization will work.</p>
   schemeType        UInt64,
   campaign          UInt64,
   creative          UInt64,
-  source            UInt64,
-  domain            UInt64,
+  <span style="color:#66d9ef">source</span>            UInt64,
+  <span style="color:#66d9ef">domain</span>            UInt64,
   referrer          UInt64,
   country           String,
   device            String,
   os                String,
   viewAt            DateTime,
-  viewDate          Date DEFAULT toDate(viewAt),
+  viewDate          Date <span style="color:#66d9ef">DEFAULT</span> toDate(viewAt),
   platform          UInt64,
   orientation       UInt64,
   pageType          UInt64,
@@ -213,192 +208,149 @@ your optimization will work.</p>
   widgetElement     UInt64,
   logged            UInt8,
   isVisited         UInt8
-) ENGINE = ReplicatedMergeTree('/clickhouse/tables/test/{shard}/views', '{replica}', viewDate,
-           (viewDate, client), 8192);
-</code></pre>
-
-<p>We have a huge table with a large amount of data and we want to optimize queries by <em>viewDate, manager, client,
+) ENGINE <span style="color:#f92672">=</span> ReplicatedMergeTree(<span style="color:#e6db74">&#39;/clickhouse/tables/test/{shard}/views&#39;</span>, <span style="color:#e6db74">&#39;{replica}&#39;</span>, viewDate,
+           (viewDate, client), <span style="color:#ae81ff">8192</span>);
+</code></pre></div><p>We have a huge table with a large amount of data and we want to optimize queries by <em>viewDate, manager, client,
 campaign, creative, source, country, device, domain</em> columns. We need to create <em>Materialized view</em> with
 <em>AggregatingMergeTree</em> engine.</p>
-
-<pre><code class="language-sql">CREATE MATERIALIZED VIEW views_mat
-  engine = AggregatingMergeTree partition by viewDate order by (
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> MATERIALIZED <span style="color:#66d9ef">VIEW</span> views_mat
+  engine <span style="color:#f92672">=</span> AggregatingMergeTree partition <span style="color:#66d9ef">by</span> viewDate <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> (
     viewDate,
     manager,
     client,
     campaign,
     creative,
-    source,
+    <span style="color:#66d9ef">source</span>,
     country,
     device,
-    domain,
+    <span style="color:#66d9ef">domain</span>,
     landing)
-AS
-SELECT viewDate,
+<span style="color:#66d9ef">AS</span>
+<span style="color:#66d9ef">SELECT</span> viewDate,
        manager,
        client,
        campaign,
        creative,
-       source,
+       <span style="color:#66d9ef">source</span>,
        country,
        device,
        domainId,
        landing,
-       countState() as amount
-FROM views
-GROUP BY viewDate,
+       countState() <span style="color:#66d9ef">as</span> amount
+<span style="color:#66d9ef">FROM</span> views
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> viewDate,
          manager,
          client,
          campaign,
          creative,
-         source,
+         <span style="color:#66d9ef">source</span>,
          country,
          device,
-         domain,
+         <span style="color:#66d9ef">domain</span>,
          landing
-</code></pre>
-
-<h2 id="aggregate-function-combinators">Aggregate function combinators</h2>
-
+</code></pre></div><h2 id="aggregate-function-combinators">Aggregate function combinators</h2>
 <p>You can see <em>countState()</em> function. This function doesn&rsquo;t return the resulting value, but just an intermediate state
 of the aggregation. You should use <em>countMerge()</em> function for getting the resulting value. More information about
-combinators you can check (here)[<a href="https://clickhouse.yandex/docs/en/query_language/agg_functions/combinators/">https://clickhouse.yandex/docs/en/query_language/agg_functions/combinators/</a>].</p>
-
+combinators you can check (here)[https://clickhouse.yandex/docs/en/query_language/agg_functions/combinators/].</p>
 <p>Let&rsquo;s try queries and check the difference between the raw table and the materialized view.</p>
-
 <p>Raw:</p>
-
-<pre><code class="language-sql">SELECT
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
     campaign,
-    count() AS views
-FROM views
-WHERE (client IN 7559922) AND (country IN 'in') AND ((viewDate &gt;= '2018-06-01') AND (viewDate &lt;= '2018-12-30'))
-GROUP BY campaign;
+    <span style="color:#66d9ef">count</span>() <span style="color:#66d9ef">AS</span> views
+<span style="color:#66d9ef">FROM</span> views
+<span style="color:#66d9ef">WHERE</span> (client <span style="color:#66d9ef">IN</span> <span style="color:#ae81ff">7559922</span>) <span style="color:#66d9ef">AND</span> (country <span style="color:#66d9ef">IN</span> <span style="color:#e6db74">&#39;in&#39;</span>) <span style="color:#66d9ef">AND</span> ((viewDate <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;2018-06-01&#39;</span>) <span style="color:#66d9ef">AND</span> (viewDate <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;2018-12-30&#39;</span>))
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> campaign;
 
-Row 1:
-──────
-campaignId:  0
-impressions: 7955062
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">1</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">0</span>
+impressions: <span style="color:#ae81ff">7955062</span>
 
-Row 2:
-──────
-campaignId:  812661
-impressions: 11003
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">2</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">812661</span>
+impressions: <span style="color:#ae81ff">11003</span>
 
-Row 3:
-──────
-campaignId:  1334
-impressions: 253350
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">3</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">1334</span>
+impressions: <span style="color:#ae81ff">253350</span>
 
-Row 4:
-──────
-campaignId:  569467
-impressions: 93182604
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">4</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">569467</span>
+impressions: <span style="color:#ae81ff">93182604</span>
 
-Row 5:
-──────
-campaignId:  237410
-impressions: 7554
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">5</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">237410</span>
+impressions: <span style="color:#ae81ff">7554</span>
 
-Row 6:
-──────
-campaignId:  23456
-impressions: 3
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">6</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">23456</span>
+impressions: <span style="color:#ae81ff">3</span>
 
-Row 7:
-──────
-campaignId:  524556
-impressions: 438
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">7</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">524556</span>
+impressions: <span style="color:#ae81ff">438</span>
 
-7 rows in set. Elapsed: 46.781 sec. Processed 9.18 billion rows, 116.92 GB (196.24 million rows/s., 2.50 GB/s.)
-</code></pre>
-
-<p>AgregateMergeTree and Materialized view:</p>
-
-<pre><code class="language-sql">SELECT
+<span style="color:#ae81ff">7</span> <span style="color:#66d9ef">rows</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">set</span>. Elapsed: <span style="color:#ae81ff">46</span>.<span style="color:#ae81ff">781</span> sec. Processed <span style="color:#ae81ff">9</span>.<span style="color:#ae81ff">18</span> billion <span style="color:#66d9ef">rows</span>, <span style="color:#ae81ff">116</span>.<span style="color:#ae81ff">92</span> GB (<span style="color:#ae81ff">196</span>.<span style="color:#ae81ff">24</span> million <span style="color:#66d9ef">rows</span><span style="color:#f92672">/</span>s., <span style="color:#ae81ff">2</span>.<span style="color:#ae81ff">50</span> GB<span style="color:#f92672">/</span>s.)
+</code></pre></div><p>AgregateMergeTree and Materialized view:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
     campaignId,
-    countMerge(amount) AS impressions
-FROM impressions_mat
-WHERE (userId IN 26) AND (country IN 'in') AND ((impressionDate &gt;= '2018-06-01') AND (impressionDate &lt;= '2018-12-30'))
-GROUP BY campaignId
+    countMerge(amount) <span style="color:#66d9ef">AS</span> impressions
+<span style="color:#66d9ef">FROM</span> impressions_mat
+<span style="color:#66d9ef">WHERE</span> (userId <span style="color:#66d9ef">IN</span> <span style="color:#ae81ff">26</span>) <span style="color:#66d9ef">AND</span> (country <span style="color:#66d9ef">IN</span> <span style="color:#e6db74">&#39;in&#39;</span>) <span style="color:#66d9ef">AND</span> ((impressionDate <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;2018-06-01&#39;</span>) <span style="color:#66d9ef">AND</span> (impressionDate <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;2018-12-30&#39;</span>))
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> campaignId
 
-Row 1:
-──────
-campaignId:  0
-impressions: 7955062
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">1</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">0</span>
+impressions: <span style="color:#ae81ff">7955062</span>
 
-Row 2:
-──────
-campaignId:  812661
-impressions: 11003
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">2</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">812661</span>
+impressions: <span style="color:#ae81ff">11003</span>
 
-Row 3:
-──────
-campaignId:  1334
-impressions: 253350
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">3</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">1334</span>
+impressions: <span style="color:#ae81ff">253350</span>
 
-Row 4:
-──────
-campaignId:  569467
-impressions: 93182604
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">4</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">569467</span>
+impressions: <span style="color:#ae81ff">93182604</span>
 
-Row 5:
-──────
-campaignId:  237410
-impressions: 7554
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">5</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">237410</span>
+impressions: <span style="color:#ae81ff">7554</span>
 
-Row 6:
-──────
-campaignId:  23456
-impressions: 3
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">6</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">23456</span>
+impressions: <span style="color:#ae81ff">3</span>
 
-Row 7:
-──────
-campaignId:  524556
-impressions: 438
+<span style="color:#66d9ef">Row</span> <span style="color:#ae81ff">7</span>:
+<span style="color:#960050;background-color:#1e0010">──────</span>
+campaignId:  <span style="color:#ae81ff">524556</span>
+impressions: <span style="color:#ae81ff">438</span>
 
-7 rows in set. Elapsed: 0.116 sec. Processed 9.13 million rows, 448.10 MB (78.78 million rows/s., 3.86 GB/s.)
-</code></pre>
-
-<p>In other queries, optimization might be more or less.</p>
-
+<span style="color:#ae81ff">7</span> <span style="color:#66d9ef">rows</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">set</span>. Elapsed: <span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">116</span> sec. Processed <span style="color:#ae81ff">9</span>.<span style="color:#ae81ff">13</span> million <span style="color:#66d9ef">rows</span>, <span style="color:#ae81ff">448</span>.<span style="color:#ae81ff">10</span> MB (<span style="color:#ae81ff">78</span>.<span style="color:#ae81ff">78</span> million <span style="color:#66d9ef">rows</span><span style="color:#f92672">/</span>s., <span style="color:#ae81ff">3</span>.<span style="color:#ae81ff">86</span> GB<span style="color:#f92672">/</span>s.)
+</code></pre></div><p>In other queries, optimization might be more or less.</p>
 <h1 id="populate">Populate</h1>
-
 <p><em>CREATE MATERIALIZED VIEW</em> has option <em>POPULATE</em>. It allows you to populate the view with data from request but it has
 one disadvantage. The view won&rsquo;t get data which come while population. Therefore, we need to create a new view then
 populate it after view creation. In our case, we can stop inserting new data, populate view, then start inserting.</p>
-
 <h1 id="summary">Summary</h1>
-
 <p>If you need to increase speed for some specific queries you can use <em>Materialized View</em> with <em>AggregatingMergeTree</em> engine.
 Keep in mind that improving is proportional to the amount of rows with unique values.</p>
 
     </div>
-    
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          
-            <span class="button previous">
-              <a href="https://etcnotes.com/posts/mysql2csv/">
-                <span class="button__icon">←</span>
-                <span class="button__text">MySQL client out as CSV</span>
-              </a>
-            </span>
-          
-          
-            <span class="button next">
-              <a href="https://etcnotes.com/posts/sre-2/">
-                <span class="button__text">Site Reliability Engineering: Measuring and Managing Reliability (part 2)</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          
-        </div>
-      </div>
     
     
       <div class="comments">
@@ -426,10 +378,10 @@ Keep in mind that improving is proportional to the amount of rows with unique va
     
   </div>
 
-  </div>
+      </div>
 
-  
-    <footer class="footer">
+      
+        <footer class="footer">
   <div class="footer__inner">
     
       <div class="copyright copyright--user"><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">All rights reserved</a>, 2019</div>
@@ -439,6 +391,7 @@ Keep in mind that improving is proportional to the amount of rows with unique va
 
 <script src="https://etcnotes.com/assets/main.js"></script>
 <script src="https://etcnotes.com/assets/prism.js"></script>
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132816408-1"></script>
 <script>
@@ -450,8 +403,9 @@ Keep in mind that improving is proportional to the amount of rows with unique va
 </script>
 
 
-  
-</div>
+      
+    </div>
 
-</body>
+    
+  </body>
 </html>
