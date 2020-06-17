@@ -16,7 +16,7 @@
     
     
     <item>
-      <title>ClickHouse. Storage Policies. Do not use &lt;path&gt; and disk &lt;path&gt; in the same directory.</title>
+      <title>ClickHouse. Storage Policies. Do not use Path and Disk&#39;s Path in the same directory.</title>
       <link>https://etcnotes.com/posts/path-and-storage-policies/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0300</pubDate>
       
@@ -28,7 +28,7 @@
         
         
         
-          ClickHouse. Using Multiple Block Devices for Data Storage. Do not use &lt;path&gt; and disk &lt;path&gt; in the same directory.
+          ClickHouse. Using Multiple Block Devices for Data Storage. Do not use Path and Disk&#39;s Path in the same directory.
           
         
         </description>
