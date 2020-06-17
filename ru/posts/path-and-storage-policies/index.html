@@ -197,7 +197,7 @@ SETTINGS storage_policy = 'moving_to_ssd'
 </code></pre><h1 id="причина">Причина</h1>
 <p>Если вы запустите сервер с такими настройками вы не получите никаких предупреждений. Вы начнете спокойно использовать такую конфигурацию и вставлять данные в таблицу. Но если вы перезапустите сервере то увидите ошибку:</p>
 <pre><code>2020.06.15 05:54:59.867745 [ 195173 ] {} &lt;Error&gt; Application: DB::Exception: Part `201811_0_2998_6` was found on disk `default` which is not defined in the storage policy: Cannot attach table `default`.`events` from metadata file
-</code></pre><p>При старте сервера CH находит парты в пути <code>/var/lib/clickhouse-hdd/</code> и думает что нашел парты в <code>path</code> . Тут путь что указан <code>path</code> считается диском с именем <code>default</code>  и выдает ошибку:</p>
+</code></pre><p>При старте сервера CH находит парты в пути <code>/var/lib/clickhouse-hdd/</code> и думает что нашел парты в <code>path</code> . Тот путь что указан <code>path</code> считается диском с именем <code>default</code>  и выдает ошибку:</p>
 <h1 id="решение">Решение</h1>
 <ol>
 <li>Создайте пути <code>/var/lib/clickhouse-hdd/hdd</code> и <code>/var/lib/clickhouse-hdd/default</code></li>
