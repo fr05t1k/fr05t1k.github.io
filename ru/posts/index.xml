@@ -10,10 +10,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;Все права защищены&lt;/a&gt;, 2019</copyright>
-    <lastBuildDate>Sat, 21 Sep 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0300</lastBuildDate>
     
 	<atom:link href="https://etcnotes.com/ru/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ClickHouse. Не используйте &lt;path&gt; и &lt;path&gt; для диска в одной директории</title>
+      <link>https://etcnotes.com/ru/posts/path-and-storage-policies/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/ru/posts/path-and-storage-policies/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/storage-policy.png&#34;/&gt;
+          
+        
+        
+        
+          ClickHouse. Хранение данных на несольких дисках. Не используйте &lt;path&gt; и &lt;path&gt; для диска в одной директории.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>PPROF. Профайлинг Golang приложений.</title>

@@ -10,10 +10,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;All rights reserved&lt;/a&gt;, 2019</copyright>
-    <lastBuildDate>Sat, 21 Sep 2019 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0300</lastBuildDate>
     
 	<atom:link href="https://etcnotes.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ClickHouse. Storage Policies. Do not use &lt;path&gt; and disk &lt;path&gt; in the same directory.</title>
+      <link>https://etcnotes.com/posts/path-and-storage-policies/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0300</pubDate>
+      
+      <guid>https://etcnotes.com/posts/path-and-storage-policies/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://etcnotes.com/img/storage-policy.png&#34;/&gt;
+          
+        
+        
+        
+          ClickHouse. Using Multiple Block Devices for Data Storage. Do not use &lt;path&gt; and disk &lt;path&gt; in the same directory.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>PPROF. Profiling Golang Applications.</title>

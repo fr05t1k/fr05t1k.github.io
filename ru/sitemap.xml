@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://etcnotes.com/ru/</loc>
-    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
+    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -18,8 +18,23 @@
   </url>
   
   <url>
+    <loc>https://etcnotes.com/ru/posts/path-and-storage-policies/</loc>
+    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://etcnotes.com/posts/path-and-storage-policies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://etcnotes.com/ru/posts/path-and-storage-policies/"
+                />
+  </url>
+  
+  <url>
     <loc>https://etcnotes.com/ru/posts/</loc>
-    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
+    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
