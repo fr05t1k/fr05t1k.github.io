@@ -10,7 +10,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;Все права защищены&lt;/a&gt;, 2019</copyright>
-    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://etcnotes.com/ru/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,7 +18,7 @@
     <item>
       <title>ClickHouse. Не используйте &lt;path&gt; и &lt;path&gt; для диска в одной директории</title>
       <link>https://etcnotes.com/ru/posts/path-and-storage-policies/</link>
-      <pubDate>Wed, 17 Jun 2020 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 -0400</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/path-and-storage-policies/</guid>
       <description>
@@ -37,7 +37,7 @@
     <item>
       <title>PPROF. Профайлинг Golang приложений.</title>
       <link>https://etcnotes.com/ru/posts/pprof/</link>
-      <pubDate>Sat, 21 Sep 2019 00:00:00 +0300</pubDate>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 -0400</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/pprof/</guid>
       <description>
@@ -56,7 +56,7 @@
     <item>
       <title>Вывод MySQL client как CSV</title>
       <link>https://etcnotes.com/ru/posts/mysql2csv/</link>
-      <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 -0400</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/mysql2csv/</guid>
       <description>
@@ -76,7 +76,7 @@
     <item>
       <title>Как оптимизировать агрегированные запросы в Clickhouse?</title>
       <link>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 -0400</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</guid>
       <description>
@@ -95,7 +95,7 @@
     <item>
       <title>SSTable и LSM-деревья. Как хранить ключ-значение на диске?</title>
       <link>https://etcnotes.com/ru/posts/sstable-and-lsm/</link>
-      <pubDate>Sun, 27 Jan 2019 00:00:00 +0200</pubDate>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 -0500</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/sstable-and-lsm/</guid>
       <description>
@@ -114,7 +114,7 @@
     <item>
       <title>Как отслеживать системные вызовы в Mac OS?</title>
       <link>https://etcnotes.com/ru/posts/system-call/</link>
-      <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 -0500</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/system-call/</guid>
       <description>
@@ -133,7 +133,7 @@
     <item>
       <title>Python Cheat Sheet</title>
       <link>https://etcnotes.com/ru/posts/python/</link>
-      <pubDate>Tue, 08 Jan 2019 00:00:00 +0200</pubDate>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 -0500</pubDate>
       
       <guid>https://etcnotes.com/ru/posts/python/</guid>
       <description>

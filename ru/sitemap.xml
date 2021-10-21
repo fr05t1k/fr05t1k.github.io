@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://etcnotes.com/ru/</loc>
-    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
+    <lastmod>2020-06-17T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,11 +14,9 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/posts/path-and-storage-policies/</loc>
-    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
+    <lastmod>2020-06-17T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -30,11 +27,9 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/posts/path-and-storage-policies/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/posts/</loc>
-    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
+    <lastmod>2020-06-17T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -45,11 +40,9 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/posts/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/posts/pprof/</loc>
-    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
+    <lastmod>2019-09-21T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -60,11 +53,9 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/posts/pprof/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/posts/mysql2csv/</loc>
-    <lastmod>2019-06-28T00:00:00+03:00</lastmod>
+    <lastmod>2019-06-28T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -75,11 +66,9 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/posts/mysql2csv/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</loc>
-    <lastmod>2019-04-24T00:00:00+03:00</lastmod>
+    <lastmod>2019-04-24T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -90,11 +79,9 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/posts/sstable-and-lsm/</loc>
-    <lastmod>2019-01-27T00:00:00+02:00</lastmod>
+    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -105,11 +92,9 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/posts/sstable-and-lsm/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/posts/system-call/</loc>
-    <lastmod>2019-01-10T00:00:00+02:00</lastmod>
+    <lastmod>2019-01-10T00:00:00-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -120,11 +105,9 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/posts/system-call/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/posts/python/</loc>
-    <lastmod>2019-01-08T00:00:00+02:00</lastmod>
+    <lastmod>2019-01-08T00:00:00-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -135,9 +118,7 @@
                 hreflang="ru"
                 href="https://etcnotes.com/ru/posts/python/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/ru/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -150,5 +131,4 @@
                 href="https://etcnotes.com/ru/about/"
                 />
   </url>
-  
 </urlset>

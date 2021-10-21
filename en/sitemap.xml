@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://etcnotes.com/</loc>
-    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
+    <lastmod>2020-06-17T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -15,11 +14,9 @@
                 hreflang="en"
                 href="https://etcnotes.com/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/posts/path-and-storage-policies/</loc>
-    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
+    <lastmod>2020-06-17T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -30,11 +27,9 @@
                 hreflang="en"
                 href="https://etcnotes.com/posts/path-and-storage-policies/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/posts/</loc>
-    <lastmod>2020-06-17T00:00:00+03:00</lastmod>
+    <lastmod>2020-06-17T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -45,11 +40,9 @@
                 hreflang="en"
                 href="https://etcnotes.com/posts/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/posts/pprof/</loc>
-    <lastmod>2019-09-21T00:00:00+03:00</lastmod>
+    <lastmod>2019-09-21T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -60,11 +53,9 @@
                 hreflang="en"
                 href="https://etcnotes.com/posts/pprof/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/posts/mysql2csv/</loc>
-    <lastmod>2019-06-28T00:00:00+03:00</lastmod>
+    <lastmod>2019-06-28T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -75,11 +66,9 @@
                 hreflang="en"
                 href="https://etcnotes.com/posts/mysql2csv/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/</loc>
-    <lastmod>2019-04-24T00:00:00+03:00</lastmod>
+    <lastmod>2019-04-24T00:00:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -90,16 +79,12 @@
                 hreflang="en"
                 href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/posts/sre-2/</loc>
-    <lastmod>2019-02-01T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-02-01T00:00:00-05:00</lastmod>
+  </url><url>
     <loc>https://etcnotes.com/posts/sstable-and-lsm/</loc>
-    <lastmod>2019-01-27T00:00:00+02:00</lastmod>
+    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -110,16 +95,12 @@
                 hreflang="en"
                 href="https://etcnotes.com/posts/sstable-and-lsm/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/posts/sre/</loc>
-    <lastmod>2019-01-22T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-22T00:00:00-05:00</lastmod>
+  </url><url>
     <loc>https://etcnotes.com/posts/system-call/</loc>
-    <lastmod>2019-01-10T00:00:00+02:00</lastmod>
+    <lastmod>2019-01-10T00:00:00-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -130,11 +111,9 @@
                 hreflang="en"
                 href="https://etcnotes.com/posts/system-call/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/posts/python/</loc>
-    <lastmod>2019-01-08T00:00:00+02:00</lastmod>
+    <lastmod>2019-01-08T00:00:00-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
@@ -145,9 +124,7 @@
                 hreflang="en"
                 href="https://etcnotes.com/posts/python/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://etcnotes.com/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -160,5 +137,4 @@
                 href="https://etcnotes.com/about/"
                 />
   </url>
-  
 </urlset>

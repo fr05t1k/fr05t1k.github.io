@@ -10,7 +10,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;All rights reserved&lt;/a&gt;, 2019</copyright>
-    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://etcnotes.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,7 +18,7 @@
     <item>
       <title>ClickHouse. Storage Policies. Do not use Path and Disk&#39;s Path in the same directory.</title>
       <link>https://etcnotes.com/posts/path-and-storage-policies/</link>
-      <pubDate>Wed, 17 Jun 2020 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 -0400</pubDate>
       
       <guid>https://etcnotes.com/posts/path-and-storage-policies/</guid>
       <description>
@@ -37,7 +37,7 @@
     <item>
       <title>PPROF. Profiling Golang Applications.</title>
       <link>https://etcnotes.com/posts/pprof/</link>
-      <pubDate>Sat, 21 Sep 2019 00:00:00 +0300</pubDate>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 -0400</pubDate>
       
       <guid>https://etcnotes.com/posts/pprof/</guid>
       <description>
@@ -56,7 +56,7 @@
     <item>
       <title>MySQL client out as CSV</title>
       <link>https://etcnotes.com/posts/mysql2csv/</link>
-      <pubDate>Fri, 28 Jun 2019 00:00:00 +0300</pubDate>
+      <pubDate>Fri, 28 Jun 2019 00:00:00 -0400</pubDate>
       
       <guid>https://etcnotes.com/posts/mysql2csv/</guid>
       <description>
@@ -76,7 +76,7 @@
     <item>
       <title>How to optimize aggregate queries in Clickhouse?</title>
       <link>https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0300</pubDate>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 -0400</pubDate>
       
       <guid>https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/</guid>
       <description>
@@ -95,7 +95,7 @@
     <item>
       <title>Site Reliability Engineering: Measuring and Managing Reliability (part 2)</title>
       <link>https://etcnotes.com/posts/sre-2/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0200</pubDate>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 -0500</pubDate>
       
       <guid>https://etcnotes.com/posts/sre-2/</guid>
       <description>
@@ -114,7 +114,7 @@
     <item>
       <title>SSTable and LSM-trees. How to store Key-Value storage on the disk?</title>
       <link>https://etcnotes.com/posts/sstable-and-lsm/</link>
-      <pubDate>Sun, 27 Jan 2019 00:00:00 +0200</pubDate>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 -0500</pubDate>
       
       <guid>https://etcnotes.com/posts/sstable-and-lsm/</guid>
       <description>
@@ -133,7 +133,7 @@
     <item>
       <title>Site Reliability Engineering: Measuring and Managing Reliability (part 1)</title>
       <link>https://etcnotes.com/posts/sre/</link>
-      <pubDate>Tue, 22 Jan 2019 00:00:00 +0200</pubDate>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 -0500</pubDate>
       
       <guid>https://etcnotes.com/posts/sre/</guid>
       <description>
@@ -152,7 +152,7 @@
     <item>
       <title>How To Trace Your System Calls On Mac OS</title>
       <link>https://etcnotes.com/posts/system-call/</link>
-      <pubDate>Thu, 10 Jan 2019 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 -0500</pubDate>
       
       <guid>https://etcnotes.com/posts/system-call/</guid>
       <description>
@@ -171,7 +171,7 @@
     <item>
       <title>Python Cheat Sheet</title>
       <link>https://etcnotes.com/posts/python/</link>
-      <pubDate>Tue, 08 Jan 2019 00:00:00 +0200</pubDate>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 -0500</pubDate>
       
       <guid>https://etcnotes.com/posts/python/</guid>
       <description>
