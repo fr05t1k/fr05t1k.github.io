@@ -158,21 +158,26 @@
         <h2>Table of Contents</h2>
         <aside class="table-of-contents"><nav id="TableOfContents">
   <ul>
-    <li><a href="#list-список">List (Список)</a></li>
-    <li><a href="#кортеж-tuple">Кортеж (Tuple)</a></li>
-    <li><a href="#сетset">Сет(Set)</a></li>
-    <li><a href="#словарь-dict">Словарь (Dict)</a></li>
-    <li><a href="#строка-string">Строка (String)</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#ключевые-функции">Ключевые функции</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#очередь-queue">Очередь (Queue)</a></li>
-    <li><a href="#связанный-список-linked-list">Связанный список (Linked List)</a>
+    <li><a href="#основные-операторы">Основные операторы</a></li>
+    <li><a href="#основные-структуры-данных">Основные структуры данных</a>
       <ul>
+        <li><a href="#list-список">List (Список)</a></li>
+        <li><a href="#кортеж-tuple">Кортеж (Tuple)</a></li>
+        <li><a href="#сетset">Сет(Set)</a></li>
+        <li><a href="#словарь-dict">Словарь (Dict)</a></li>
+        <li><a href="#строка-string">Строка (String)</a></li>
+      </ul>
+    </li>
+    <li><a href="#циклы">Циклы</a></li>
+    <li><a href="#сортировка">Сортировка</a>
+      <ul>
+        <li><a href="#ключевые-функции">Ключевые функции</a></li>
+      </ul>
+    </li>
+    <li><a href="#расширеные-структуры-данных">Расширеные структуры данных</a>
+      <ul>
+        <li><a href="#очередь-queue">Очередь (Queue)</a></li>
+        <li><a href="#связанный-список-linked-list">Связанный список (Linked List)</a></li>
         <li><a href="#heapq-priority-queue-куча">Heapq (priority queue) Куча</a></li>
         <li><a href="#default-dict">Default dict</a></li>
       </ul>
@@ -180,7 +185,7 @@
   </ul>
 </nav></aside>
       
-      <h1 id="основные-операторы">Основные операторы</h1>
+      <h2 id="основные-операторы">Основные операторы</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
 <span style="color:#ae81ff">1.5</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
@@ -189,8 +194,8 @@
 <span style="color:#ae81ff">9</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> abs(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
 <span style="color:#ae81ff">1</span>
-</code></pre></div><h1 id="основные-структуры-данных">Основные структуры данных</h1>
-<h2 id="list-список">List (Список)</h2>
+</code></pre></div><h2 id="основные-структуры-данных">Основные структуры данных</h2>
+<h3 id="list-список">List (Список)</h3>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Сортированный</li>
 <li><input checked="" disabled="" type="checkbox"> Изменяемый</li>
@@ -221,7 +226,7 @@
 <span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>sort()        <span style="color:#75715e"># сортировка на лету, возвращает None</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> sorted(list)       <span style="color:#75715e"># возвращает отсортированую копию списка</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join(list)     <span style="color:#75715e"># возвращает строку где элементы списка разделены запятой</span>
-</code></pre></div><h2 id="кортеж-tuple">Кортеж (Tuple)</h2>
+</code></pre></div><h3 id="кортеж-tuple">Кортеж (Tuple)</h3>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Сортированный</li>
 <li><input disabled="" type="checkbox"> Изменяемый</li>
@@ -236,7 +241,7 @@
 <span style="color:#ae81ff">3</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> tuple<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#34;banana&#34;</span>)
 <span style="color:#ae81ff">1</span>
-</code></pre></div><h2 id="сетset">Сет(Set)</h2>
+</code></pre></div><h3 id="сетset">Сет(Set)</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Сортированный</li>
 <li><input checked="" disabled="" type="checkbox"> Изменяемый</li>
@@ -263,7 +268,7 @@ set<span style="color:#f92672">.</span>update([<span style="color:#e6db74">&#34;
 <span style="color:#75715e"># создание сета с уникальными символами из строки </span>
 set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 {<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>}
-</code></pre></div><h2 id="словарь-dict">Словарь (Dict)</h2>
+</code></pre></div><h3 id="словарь-dict">Словарь (Dict)</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Сортированный</li>
 <li><input checked="" disabled="" type="checkbox"> Изменяемый</li>
@@ -275,7 +280,7 @@ set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 <span style="color:#f92672">&gt;&gt;&gt;</span> dict[<span style="color:#e6db74">&#34;key&#34;</span>]      <span style="color:#75715e"># ...this raises KeyError</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;key&#34;</span>)  <span style="color:#75715e"># ...this returns None</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>setdefault(<span style="color:#e6db74">&#34;key&#34;</span>, <span style="color:#ae81ff">1</span>)
-</code></pre></div><h2 id="строка-string">Строка (String)</h2>
+</code></pre></div><h3 id="строка-string">Строка (String)</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Изменяемый</li>
 </ul>
@@ -299,7 +304,7 @@ set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 <span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>strip()  <span style="color:#75715e"># удаляет пробельные символы с обеих сторон</span>
 
 <span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>islower() <span style="color:#75715e"># проверка регистра lower/upper/title</span>
-</code></pre></div><h1 id="циклы">Циклы</h1>
+</code></pre></div><h2 id="циклы">Циклы</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>]:
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):        <span style="color:#75715e"># 0 to 3</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>):     <span style="color:#75715e"># 4 to 7</span>
@@ -312,7 +317,7 @@ set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 </code></pre></div><p>Для цикла последовательности в обратном порядке, укажи последовательность в прямом порядки и вызови функцию reversed.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> reversed(range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>)):
 <span style="color:#f92672">...</span>  print(i)
-</code></pre></div><h1 id="сортировка">Сортировка</h1>
+</code></pre></div><h2 id="сортировка">Сортировка</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted([<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>]) <span style="color:#75715e"># возвращает новый список</span>
 [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
 
@@ -320,7 +325,7 @@ set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 <span style="color:#f92672">&gt;&gt;&gt;</span> a<span style="color:#f92672">.</span>sort() <span style="color:#75715e"># сортировка на лету</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> a
 [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
-</code></pre></div><h2 id="ключевые-функции">Ключевые функции</h2>
+</code></pre></div><h3 id="ключевые-функции">Ключевые функции</h3>
 <p>Ключевые функции принимаю один аргумент и возвращают ключ для сортировки.</p>
 <p>Пример регистронезависимой сортировки:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted(<span style="color:#e6db74">&#34;This is a test string from Andrew&#34;</span><span style="color:#f92672">.</span>split(), key<span style="color:#f92672">=</span>str<span style="color:#f92672">.</span>lower)
@@ -333,8 +338,8 @@ set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 <span style="color:#f92672">...</span> ]
 <span style="color:#f92672">&gt;&gt;&gt;</span> sorted(student_tuples, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> student: student[<span style="color:#ae81ff">2</span>])
 [(<span style="color:#e6db74">&#39;dave&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">10</span>), (<span style="color:#e6db74">&#39;jane&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">12</span>), (<span style="color:#e6db74">&#39;john&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#ae81ff">15</span>)]
-</code></pre></div><h1 id="расширеные-структуры-данных">Расширеные структуры данных</h1>
-<h2 id="очередь-queue">Очередь (Queue)</h2>
+</code></pre></div><h2 id="расширеные-структуры-данных">Расширеные структуры данных</h2>
+<h3 id="очередь-queue">Очередь (Queue)</h3>
 <p>Добавление и удаления с конца списка быстрое, но вставка и удаление с начала списка медленная (потому что нужно сместить все элементы списка)
 Для реализации очереди можно использовать collections.deque который был сделан для добавления и удаления с любого конца. На пример:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
@@ -347,7 +352,7 @@ set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 <span style="color:#e6db74">&#39;John&#39;</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> queue                           <span style="color:#75715e"># Оставшаяся очедь</span>
 deque([<span style="color:#e6db74">&#39;Michael&#39;</span>, <span style="color:#e6db74">&#39;Terry&#39;</span>, <span style="color:#e6db74">&#39;Graham&#39;</span>])
-</code></pre></div><h2 id="связанный-список-linked-list">Связанный список (Linked List)</h2>
+</code></pre></div><h3 id="связанный-список-linked-list">Связанный список (Linked List)</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinkedList</span>:
   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__ini__</span>(self):
     self<span style="color:#f92672">.</span>head <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
