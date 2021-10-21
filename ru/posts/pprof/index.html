@@ -44,8 +44,8 @@ package main import ( &amp;#34;net/http&amp;#34; _ &amp;#34;net/http/pprof&amp;#
 <meta property="og:description" content="Pprof отличный инструмент для отлажиния ваших golang приложений. Давайте разберемся как его использовать..." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://etcnotes.com/ru/posts/pprof/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-09-21T00:00:00-04:00" />
-<meta property="article:modified_time" content="2019-09-21T00:00:00-04:00" /><meta property="og:site_name" content="/etc/notes" />
+<meta property="article:published_time" content="2019-09-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-21T00:00:00+00:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
@@ -164,11 +164,11 @@ package main import ( &amp;#34;net/http&amp;#34; _ &amp;#34;net/http/pprof&amp;#
 инструмент для профилирования приложений. Есть несколько способов его использования. Мы рассмотрим самый простой.</p>
 <p>Исходный код примера вы можете найти <a href="https://github.com/fr05t1k/pprof-example">здесь</a></p>
 <p>Для начала нам нужно подключить стандарные http обработчики:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
 	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;net/http/pprof&#34;</span>
 )
 </code></pre></div><p>Если вы не используете http в своем приложнии, вы можете запустить http отдельно:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
 	<span style="color:#e6db74">&#34;net/http&#34;</span>
@@ -180,7 +180,7 @@ package main import ( &amp;#34;net/http&amp;#34; _ &amp;#34;net/http/pprof&amp;#
 }
 </code></pre></div><p><code>net/http/pprof</code> содержит <code>init</code> функцию которая регистрирует стандартные обрабочики которые предоставляют основную
 информацию о времени исполенения приложения.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">init</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">init</span>() {
 	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/&#34;</span>, <span style="color:#a6e22e">Index</span>)
 	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/cmdline&#34;</span>, <span style="color:#a6e22e">Cmdline</span>)
 	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/profile&#34;</span>, <span style="color:#a6e22e">Profile</span>)
@@ -199,7 +199,7 @@ package main import ( &amp;#34;net/http&amp;#34; _ &amp;#34;net/http/pprof&amp;#
 
 <p>Сейчас вы можете запустить pprof на определенный период времени и посмотреть чем занимается ваше приложение в это время.
 Давайте запустим профилирование на 30 секунд.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go tool pprof -http<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:9090&#34;</span> -seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> http://localhost:8081/debug/pprof/profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go tool pprof -http<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:9090&#34;</span> -seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> http://localhost:8081/debug/pprof/profile
 </code></pre></div>
   <img src="/posts/pprof/graph.png"  alt="pprof graph page"  class="left"  />
 

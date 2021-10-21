@@ -40,8 +40,8 @@
 <meta property="og:description" content="Cheat sheet for quick solving your cases on HackerRank" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://etcnotes.com/posts/python/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-01-08T00:00:00-05:00" />
-<meta property="article:modified_time" content="2019-01-08T00:00:00-05:00" /><meta property="og:site_name" content="/etc/notes" />
+<meta property="article:published_time" content="2019-01-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-01-08T00:00:00+00:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
@@ -158,26 +158,36 @@
         <h2>Table of Contents</h2>
         <aside class="table-of-contents"><nav id="TableOfContents">
   <ul>
-    <li><a href="#list">List</a></li>
-    <li><a href="#tuple">Tuple</a></li>
-    <li><a href="#set">Set</a></li>
-    <li><a href="#dict">Dict</a></li>
-    <li><a href="#collectionsdefaultdict">collections.defaultdict</a></li>
-    <li><a href="#string">String</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#key-functions">Key Functions</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#queue">Queue</a></li>
-    <li><a href="#linked-list">Linked List</a></li>
+    <li><a href="#basic-operations">Basic operations</a></li>
+    <li><a href="#basic-data-structures">Basic Data Structures</a>
+      <ul>
+        <li><a href="#list">List</a></li>
+        <li><a href="#tuple">Tuple</a></li>
+        <li><a href="#set">Set</a></li>
+        <li><a href="#dict">Dict</a></li>
+        <li><a href="#string">String</a></li>
+      </ul>
+    </li>
+    <li><a href="#loops-and-iterations">Loops And Iterations</a></li>
+    <li><a href="#sorting">Sorting</a>
+      <ul>
+        <li><a href="#key-functions">Key Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#extended-data-structures">Extended Data Structures</a>
+      <ul>
+        <li><a href="#queue">Queue</a></li>
+        <li><a href="#linked-list">Linked List</a></li>
+        <li><a href="#heapq-priority-queue">Heapq (priority queue)</a></li>
+        <li><a href="#default-dict">Default dict</a></li>
+      </ul>
+    </li>
+    <li><a href="#formulas">Formulas</a></li>
   </ul>
 </nav></aside>
       
-      <h1 id="basic-operations">Basic operations</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+      <h2 id="basic-operations">Basic operations</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
 <span style="color:#ae81ff">1.5</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
 <span style="color:#ae81ff">1</span>
@@ -185,14 +195,14 @@
 <span style="color:#ae81ff">9</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> abs(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
 <span style="color:#ae81ff">1</span>
-</code></pre></div><h1 id="basic-data-structures">Basic Data Structures</h1>
-<h2 id="list">List</h2>
+</code></pre></div><h2 id="basic-data-structures">Basic Data Structures</h2>
+<h3 id="list">List</h3>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Ordered</li>
 <li><input checked="" disabled="" type="checkbox"> Changable</li>
 <li><input checked="" disabled="" type="checkbox"> Duplicates</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> list <span style="color:#f92672">=</span> []
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> list <span style="color:#f92672">=</span> []
 <span style="color:#f92672">&gt;&gt;&gt;</span> list <span style="color:#f92672">=</span> [i:j] <span style="color:#75715e"># returns list subset</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> list <span style="color:#f92672">=</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]  <span style="color:#75715e"># returns last element</span>
 
@@ -217,14 +227,14 @@
 <span style="color:#f92672">&gt;&gt;&gt;</span> list<span style="color:#f92672">.</span>sort()        <span style="color:#75715e"># sorts in-place, returns None</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> sorted(list)       <span style="color:#75715e"># returns sorted copy of list</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join(list)     <span style="color:#75715e"># returns a string with list elements separated by comma</span>
-</code></pre></div><h2 id="tuple">Tuple</h2>
+</code></pre></div><h3 id="tuple">Tuple</h3>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> Ordered</li>
 <li><input disabled="" type="checkbox"> Changable</li>
 <li><input checked="" disabled="" type="checkbox"> Duplicates</li>
 </ul>
 <p>Can be used as a dictionary key</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> tuple <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;cherry&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> tuple <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;cherry&#34;</span>)
 
 <span style="color:#f92672">&gt;&gt;&gt;</span> tuple[<span style="color:#ae81ff">1</span>] <span style="color:#75715e"># banana</span>
 <span style="color:#e6db74">&#39;banana&#39;</span>
@@ -232,14 +242,14 @@
 <span style="color:#ae81ff">3</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> tuple<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#34;banana&#34;</span>)
 <span style="color:#ae81ff">1</span>
-</code></pre></div><h2 id="set">Set</h2>
+</code></pre></div><h3 id="set">Set</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Ordered</li>
 <li><input checked="" disabled="" type="checkbox"> Changable</li>
 <li><input disabled="" type="checkbox"> Duplicates</li>
 </ul>
 <p>Cannot access by index</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">set <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;cherry&#34;</span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">set <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;cherry&#34;</span>}
 
 set<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;orange&#34;</span>)
 set<span style="color:#f92672">.</span>update([<span style="color:#e6db74">&#34;orange&#34;</span>, <span style="color:#e6db74">&#34;mango&#34;</span>, <span style="color:#e6db74">&#34;grapes&#34;</span>])
@@ -259,37 +269,28 @@ set<span style="color:#f92672">.</span>update([<span style="color:#e6db74">&#34;
 <span style="color:#75715e"># create set of unique characters from the string </span>
 set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 {<span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>}
-</code></pre></div><h2 id="dict">Dict</h2>
+</code></pre></div><h3 id="dict">Dict</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Ordered</li>
 <li><input checked="" disabled="" type="checkbox"> Changable</li>
 <li><input disabled="" type="checkbox"> Duplicates</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>keys()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>keys()
 <span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>values()
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;key&#34;</span> <span style="color:#f92672">in</span> dict    <span style="color:#75715e"># let&#39;s say this returns False, then...</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> dict[<span style="color:#e6db74">&#34;key&#34;</span>]      <span style="color:#75715e"># ...this raises KeyError</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;key&#34;</span>)  <span style="color:#75715e"># ...this returns None</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> dict<span style="color:#f92672">.</span>setdefault(<span style="color:#e6db74">&#34;key&#34;</span>, <span style="color:#ae81ff">1</span>)
-</code></pre></div><h2 id="collectionsdefaultdict">collections.defaultdict</h2>
-<p>Dict subclass that calls a factory function to supply missing values.</p>
-<pre><code>&gt;&gt;&gt; s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
-&gt;&gt;&gt; d = defaultdict(list)
-&gt;&gt;&gt; for k, v in s:
-...     d[k].append(v)
-...
-&gt;&gt;&gt; sorted(d.items())
-[('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
-</code></pre><h2 id="string">String</h2>
+</code></pre></div><h3 id="string">String</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Changable</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> str[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">4</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> str[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">4</span>]
 <span style="color:#f92672">&gt;&gt;&gt;</span> len(str)
 
 <span style="color:#f92672">&gt;&gt;&gt;</span> string<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;-&#34;</span>, <span style="color:#e6db74">&#34; &#34;</span>)   <span style="color:#75715e"># find and replace</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">.</span>join(list)             <span style="color:#75715e"># join list into string</span>
-<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;hi {0}&#34;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;j&#39;</span>)       <span style="color:#75715e"># format string</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#e6db74">&#34;hi </span><span style="color:#e6db74">{0}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;j&#39;</span>)       <span style="color:#75715e"># format string</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#34;,&#34;</span>)              <span style="color:#75715e"># find in the string</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#34;,&#34;</span>)             <span style="color:#75715e"># same, but raises IndexError</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>count(<span style="color:#e6db74">&#34;,&#34;</span>)
@@ -304,45 +305,45 @@ set(<span style="color:#e6db74">&#34;aba&#34;</span>)
 <span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>strip()  <span style="color:#75715e"># both</span>
 
 <span style="color:#f92672">&gt;&gt;&gt;</span> str<span style="color:#f92672">.</span>islower() <span style="color:#75715e"># is lower/upper/title</span>
-</code></pre></div><h1 id="loops-and-iterations">Loops And Iterations</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>]:
+</code></pre></div><h2 id="loops-and-iterations">Loops And Iterations</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>]:
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):        <span style="color:#75715e"># 0 to 3</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>):     <span style="color:#75715e"># 4 to 7</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>):  <span style="color:#75715e"># 1, 3, 5, 7</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> key, val <span style="color:#f92672">in</span> dict<span style="color:#f92672">.</span>items():
 <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> index, item <span style="color:#f92672">in</span> enumerate(list):
 </code></pre></div><p>To loop over two or more sequences at the same time, the entries can be paired with the zip() function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> q, a <span style="color:#f92672">in</span> zip(questions, answers):
-<span style="color:#f92672">...</span>  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;What is your {0}?  It is {1}.&#39;</span><span style="color:#f92672">.</span>format(q, a))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> q, a <span style="color:#f92672">in</span> zip(questions, answers):
+<span style="color:#f92672">...</span>  print(<span style="color:#e6db74">&#39;What is your </span><span style="color:#e6db74">{0}</span><span style="color:#e6db74">?  It is </span><span style="color:#e6db74">{1}</span><span style="color:#e6db74">.&#39;</span><span style="color:#f92672">.</span>format(q, a))
 </code></pre></div><p>To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the reversed() function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> reversed(range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>)):
-<span style="color:#f92672">...</span>  <span style="color:#66d9ef">print</span>(i)
-</code></pre></div><h1 id="sorting">Sorting</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted([<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>]) <span style="color:#75715e"># returns a new list</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> reversed(range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>)):
+<span style="color:#f92672">...</span>  print(i)
+</code></pre></div><h2 id="sorting">Sorting</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted([<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>]) <span style="color:#75715e"># returns a new list</span>
 [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
 
 <span style="color:#f92672">&gt;&gt;&gt;</span> a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>]
 <span style="color:#f92672">&gt;&gt;&gt;</span> a<span style="color:#f92672">.</span>sort() <span style="color:#75715e"># in-place sort</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> a
 [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
-</code></pre></div><h2 id="key-functions">Key Functions</h2>
+</code></pre></div><h3 id="key-functions">Key Functions</h3>
 <p>Key function takes a single argument and returns a key to use for sorting purposes.</p>
 <p>Case insesetive sorting using key function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted(<span style="color:#e6db74">&#34;This is a test string from Andrew&#34;</span><span style="color:#f92672">.</span>split(), key<span style="color:#f92672">=</span>str<span style="color:#f92672">.</span>lower)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> sorted(<span style="color:#e6db74">&#34;This is a test string from Andrew&#34;</span><span style="color:#f92672">.</span>split(), key<span style="color:#f92672">=</span>str<span style="color:#f92672">.</span>lower)
 [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;Andrew&#39;</span>, <span style="color:#e6db74">&#39;from&#39;</span>, <span style="color:#e6db74">&#39;is&#39;</span>, <span style="color:#e6db74">&#39;string&#39;</span>, <span style="color:#e6db74">&#39;test&#39;</span>, <span style="color:#e6db74">&#39;This&#39;</span>]
 </code></pre></div><p>Sort by key of a tuple:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> student_tuples <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> student_tuples <span style="color:#f92672">=</span> [
 <span style="color:#f92672">...</span>  (<span style="color:#e6db74">&#39;john&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#ae81ff">15</span>),
 <span style="color:#f92672">...</span>  (<span style="color:#e6db74">&#39;jane&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">12</span>),
 <span style="color:#f92672">...</span>  (<span style="color:#e6db74">&#39;dave&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">10</span>),
 <span style="color:#f92672">...</span> ]
 <span style="color:#f92672">&gt;&gt;&gt;</span> sorted(student_tuples, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> student: student[<span style="color:#ae81ff">2</span>])
 [(<span style="color:#e6db74">&#39;dave&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">10</span>), (<span style="color:#e6db74">&#39;jane&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#ae81ff">12</span>), (<span style="color:#e6db74">&#39;john&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#ae81ff">15</span>)]
-</code></pre></div><h1 id="extended-data-structures">Extended Data Structures</h1>
-<h2 id="queue">Queue</h2>
+</code></pre></div><h2 id="extended-data-structures">Extended Data Structures</h2>
+<h3 id="queue">Queue</h3>
 <p>While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).
 To implement a queue, use collections.deque which was designed to have fast appends and pops from both ends. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
 <span style="color:#f92672">&gt;&gt;&gt;</span> queue <span style="color:#f92672">=</span> deque([<span style="color:#e6db74">&#34;Eric&#34;</span>, <span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#e6db74">&#34;Michael&#34;</span>])
 <span style="color:#f92672">&gt;&gt;&gt;</span> queue<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#34;Terry&#34;</span>)           <span style="color:#75715e"># Terry arrives</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> queue<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#34;Graham&#34;</span>)          <span style="color:#75715e"># Graham arrives</span>
@@ -352,11 +353,11 @@ To implement a queue, use collections.deque which was designed to have fast appe
 <span style="color:#e6db74">&#39;John&#39;</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> queue                           <span style="color:#75715e"># Remaining queue in order of arrival</span>
 deque([<span style="color:#e6db74">&#39;Michael&#39;</span>, <span style="color:#e6db74">&#39;Terry&#39;</span>, <span style="color:#e6db74">&#39;Graham&#39;</span>])
-</code></pre></div><h2 id="linked-list">Linked List</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinkedList</span>:
+</code></pre></div><h3 id="linked-list">Linked List</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinkedList</span>:
   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__ini__</span>(self):
-    self<span style="color:#f92672">.</span>head <span style="color:#f92672">=</span> None
-    self<span style="color:#f92672">.</span>tail <span style="color:#f92672">=</span> None
+    self<span style="color:#f92672">.</span>head <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+    self<span style="color:#f92672">.</span>tail <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
 
   <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">append</span>(self, node):
     self<span style="color:#f92672">.</span>tail<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> node
@@ -369,10 +370,10 @@ deque([<span style="color:#e6db74">&#39;Michael&#39;</span>, <span style="color:
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>:
   <span style="color:#66d9ef">def</span> __init__(self, val):
     self<span style="color:#f92672">.</span>val <span style="color:#f92672">=</span> val,
-    self<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> None
-</code></pre></div><h1 id="heapq-priority-queue">Heapq (priority queue)</h1>
+    self<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</code></pre></div><h3 id="heapq-priority-queue">Heapq (priority queue)</h3>
 <p>This module provides an implementation of the heap queue algorithm, also known as the priority queue algorithm.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">heapsort</span>(iterable):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">heapsort</span>(iterable):
 <span style="color:#f92672">...</span>     h <span style="color:#f92672">=</span> []
 <span style="color:#f92672">...</span>     <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> iterable:
 <span style="color:#f92672">...</span>         heappush(h, value)
@@ -380,9 +381,18 @@ deque([<span style="color:#e6db74">&#39;Michael&#39;</span>, <span style="color:
 <span style="color:#f92672">...</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> heapsort([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>])
 [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>]
-</code></pre></div><h1 id="formulas">Formulas</h1>
+</code></pre></div><h3 id="default-dict">Default dict</h3>
+<p>collections.defaultdict subclass that calls a factory function to supply missing values.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> s <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;yellow&#39;</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#e6db74">&#39;blue&#39;</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#e6db74">&#39;yellow&#39;</span>, <span style="color:#ae81ff">3</span>), (<span style="color:#e6db74">&#39;blue&#39;</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#ae81ff">1</span>)]
+<span style="color:#f92672">&gt;&gt;&gt;</span> d <span style="color:#f92672">=</span> defaultdict(list)
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> s:
+<span style="color:#f92672">...</span>     d[k]<span style="color:#f92672">.</span>append(v)
+<span style="color:#f92672">...</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> sorted(d<span style="color:#f92672">.</span>items())
+[(<span style="color:#e6db74">&#39;blue&#39;</span>, [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>]), (<span style="color:#e6db74">&#39;red&#39;</span>, [<span style="color:#ae81ff">1</span>]), (<span style="color:#e6db74">&#39;yellow&#39;</span>, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>])]
+</code></pre></div><h2 id="formulas">Formulas</h2>
 <p>Number of substrings of a string</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(n <span style="color:#f92672">*</span> (n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># where n is the number of characters</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(n <span style="color:#f92672">*</span> (n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># where n is the number of characters</span>
 </code></pre></div>
     </div>
     

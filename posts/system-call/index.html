@@ -41,8 +41,8 @@ Note But from past versions of Mac OS, some paths are protected by SIP(System In
 <meta property="og:description" content="dtruss is analog of strace in linux. It allows you to trace system calls from a running process or run a process with tracing. Also we are take a look on an alternative way." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://etcnotes.com/posts/system-call/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-01-10T00:00:00-05:00" />
-<meta property="article:modified_time" content="2019-01-10T00:00:00-05:00" /><meta property="og:site_name" content="/etc/notes" />
+<meta property="article:published_time" content="2019-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-01-10T00:00:00+00:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
@@ -162,20 +162,20 @@ Note But from past versions of Mac OS, some paths are protected by SIP(System In
 <p>But from past versions of Mac OS, some paths are protected by SIP(System Integrity Protection) (i.e. /usr/bin) and cannot be traced. But there is a workaround, to change settings in recovery mode but I would not recommend it to you. Then you can trace only applications which are not under SIP protection.</p>
 <h2 id="examples">Examples</h2>
 <p>run and examine the &ldquo;df -h&rdquo; command</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss df -h
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss df -h
 </code></pre></div><p>examine PID 1871</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -p <span style="color:#ae81ff">1871</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -p <span style="color:#ae81ff">1871</span>
 </code></pre></div><p>examine all processes called &ldquo;tar&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -n tar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -n tar
 </code></pre></div><p>run test.sh and follow children</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -f test.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -f test.sh
 </code></pre></div><p>run the &ldquo;date&rdquo; command and print elapsed and on cpu times,</p>
-<pre><code>dtruss -eo date
+<pre tabindex="0"><code>dtruss -eo date
 </code></pre><p>If you need to dive deeper you can check DTrace directly. DTrace is a powerful tool for real-time profiling applications and kernel. You can check it <a href="https://docs.oracle.com/cd/E19253-01/819-5488/index.html">here</a></p>
 <h1 id="instruments">Instruments</h1>
 <p>As an alternative, you can try to use Instruments which is an XCode application (<a href="https://help.apple.com/instruments/mac/current">Manual</a>).</p>
 <p>Trace system calls and saves it in <code>result.trace</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">instruments  -d result.trace -t <span style="color:#e6db74">&#39;System Trace&#39;</span> /bin/ls
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">instruments  -d result.trace -t <span style="color:#e6db74">&#39;System Trace&#39;</span> /bin/ls
 open result.trace
 </code></pre></div>
   <img src="/img/instruments.png"  alt="Instruments demo"  class="center"  style="border-radius: 8px;"  />

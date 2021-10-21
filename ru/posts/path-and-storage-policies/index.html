@@ -41,8 +41,8 @@
 <meta property="og:description" content="ClickHouse. Хранение данных на несольких дисках. Не используйте &lt;path&gt; и &lt;path&gt; для диска в одной директории." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://etcnotes.com/ru/posts/path-and-storage-policies/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-06-17T00:00:00-04:00" />
-<meta property="article:modified_time" content="2020-06-17T00:00:00-04:00" /><meta property="og:site_name" content="/etc/notes" />
+<meta property="article:published_time" content="2020-06-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-17T00:00:00+00:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
@@ -159,7 +159,7 @@
       <h1 id="проблема">Проблема</h1>
 <p>Если вам придется делать ноду для ClickHouse из нескольких дисков, то не указывайте путь для дисков тот,
 что указан в настройке <code>&lt;path&gt;</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;storage_configuration&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;storage_configuration&gt;</span>
     <span style="color:#f92672">&lt;disks&gt;</span>
         <span style="color:#f92672">&lt;disk_hdd&gt;</span>
             <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/<span style="color:#f92672">&lt;/path&gt;</span>
@@ -184,7 +184,7 @@
 <span style="color:#f92672">&lt;/storage_configuration&gt;</span>
 <span style="color:#75715e">&lt;!-- Path to data directory, with trailing slash. --&gt;</span>
 <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/<span style="color:#f92672">&lt;/path&gt;</span>
-</code></pre></div><pre><code class="language-$xslt" data-lang="$xslt">CREATE TABLE stripcash.events
+</code></pre></div><pre tabindex="0"><code class="language-$xslt" data-lang="$xslt">CREATE TABLE stripcash.events
 (
     `type` UInt64,
     `eventAt` DateTime,
@@ -195,14 +195,14 @@ PARTITION BY toYYYYMM(eventDate)
 SETTINGS storage_policy = 'moving_to_ssd'
 </code></pre><h1 id="причина">Причина</h1>
 <p>Если вы запустите сервер с такими настройками вы не получите никаких предупреждений. Вы начнете спокойно использовать такую конфигурацию и вставлять данные в таблицу. Но если вы перезапустите сервере то увидите ошибку:</p>
-<pre><code>2020.06.15 05:54:59.867745 [ 195173 ] {} &lt;Error&gt; Application: DB::Exception: Part `201811_0_2998_6` was found on disk `default` which is not defined in the storage policy: Cannot attach table `default`.`events` from metadata file
+<pre tabindex="0"><code>2020.06.15 05:54:59.867745 [ 195173 ] {} &lt;Error&gt; Application: DB::Exception: Part `201811_0_2998_6` was found on disk `default` which is not defined in the storage policy: Cannot attach table `default`.`events` from metadata file
 </code></pre><p>При старте сервера CH находит парты в пути <code>/var/lib/clickhouse-hdd/</code> и думает что нашел парты в <code>path</code> . Тот путь что указан <code>path</code> считается диском с именем <code>default</code>  и выдает ошибку:</p>
 <h1 id="решение">Решение</h1>
 <ol>
 <li>Создайте пути <code>/var/lib/clickhouse-hdd/hdd</code> и <code>/var/lib/clickhouse-hdd/default</code></li>
 <li>Поменяйте конфигурацию на:</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;storage_configuration&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;storage_configuration&gt;</span>
     <span style="color:#f92672">&lt;disks&gt;</span>
         <span style="color:#f92672">&lt;disk_hdd&gt;</span>
             <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/hdd/<span style="color:#f92672">&lt;/path&gt;</span>

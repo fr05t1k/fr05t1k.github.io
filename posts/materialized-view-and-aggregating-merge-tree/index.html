@@ -40,8 +40,8 @@
 <meta property="og:description" content="We will talk about a way which allow us to make keep aggregated data." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-04-24T00:00:00-04:00" />
-<meta property="article:modified_time" content="2019-04-24T00:00:00-04:00" /><meta property="og:site_name" content="/etc/notes" />
+<meta property="article:published_time" content="2019-04-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-24T00:00:00+00:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
@@ -172,7 +172,7 @@ approach, We can group data by some fields and it helps us optimize heavy querie
 the optimization rate is a proportion of all records with unique records in the materialized view. It tells how fast
 your optimization will work.</p>
 <h1 id="how-to">How to</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> views
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> views
 (
   id                UInt64,
   manager           UInt64,
@@ -203,7 +203,7 @@ your optimization will work.</p>
 </code></pre></div><p>We have a huge table with a large amount of data and we want to optimize queries by <em>viewDate, manager, client,
 campaign, creative, source, country, device, domain</em> columns. We need to create <em>Materialized view</em> with
 <em>AggregatingMergeTree</em> engine.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> MATERIALIZED <span style="color:#66d9ef">VIEW</span> views_mat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> MATERIALIZED <span style="color:#66d9ef">VIEW</span> views_mat
   engine <span style="color:#f92672">=</span> AggregatingMergeTree partition <span style="color:#66d9ef">by</span> viewDate <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> (
     viewDate,
     manager,
@@ -244,7 +244,7 @@ of the aggregation. You should use <em>countMerge()</em> function for getting th
 combinators you can check (here)[https://clickhouse.yandex/docs/en/query_language/agg_functions/combinators/].</p>
 <p>Let&rsquo;s try queries and check the difference between the raw table and the materialized view.</p>
 <p>Raw:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
     campaign,
     <span style="color:#66d9ef">count</span>() <span style="color:#66d9ef">AS</span> views
 <span style="color:#66d9ef">FROM</span> views
@@ -288,7 +288,7 @@ impressions: <span style="color:#ae81ff">438</span>
 
 <span style="color:#ae81ff">7</span> <span style="color:#66d9ef">rows</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">set</span>. Elapsed: <span style="color:#ae81ff">46</span>.<span style="color:#ae81ff">781</span> sec. Processed <span style="color:#ae81ff">9</span>.<span style="color:#ae81ff">18</span> billion <span style="color:#66d9ef">rows</span>, <span style="color:#ae81ff">116</span>.<span style="color:#ae81ff">92</span> GB (<span style="color:#ae81ff">196</span>.<span style="color:#ae81ff">24</span> million <span style="color:#66d9ef">rows</span><span style="color:#f92672">/</span>s., <span style="color:#ae81ff">2</span>.<span style="color:#ae81ff">50</span> GB<span style="color:#f92672">/</span>s.)
 </code></pre></div><p>AgregateMergeTree and Materialized view:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
     campaignId,
     countMerge(amount) <span style="color:#66d9ef">AS</span> impressions
 <span style="color:#66d9ef">FROM</span> impressions_mat

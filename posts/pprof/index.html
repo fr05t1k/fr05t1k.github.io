@@ -43,8 +43,8 @@ import ( _ &amp;#34;net/http/pprof&amp;#34; ) If you don&amp;rsquo;t use http in
 <meta property="og:description" content="Pprof is a great tool to profile your golang applications. Let&#39;s find out how to use it..." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://etcnotes.com/posts/pprof/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-09-21T00:00:00-04:00" />
-<meta property="article:modified_time" content="2019-09-21T00:00:00-04:00" /><meta property="og:site_name" content="/etc/notes" />
+<meta property="article:published_time" content="2019-09-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-21T00:00:00+00:00" /><meta property="og:site_name" content="/etc/notes" />
 
 
 
@@ -165,11 +165,11 @@ import ( _ &amp;#34;net/http/pprof&amp;#34; ) If you don&amp;rsquo;t use http in
 </ul>
 <p>Check the full code example <a href="https://github.com/fr05t1k/pprof-example">here</a>.</p>
 <p>First of all, we need to import default pprof http endpoints:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
 	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;net/http/pprof&#34;</span>
 )
 </code></pre></div><p>If you don&rsquo;t use http in your application you can just run it standalone:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
 	<span style="color:#e6db74">&#34;net/http&#34;</span>
@@ -180,7 +180,7 @@ import ( _ &amp;#34;net/http/pprof&amp;#34; ) If you don&amp;rsquo;t use http in
     <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8081&#34;</span>, <span style="color:#66d9ef">nil</span>)
 }
 </code></pre></div><p><code>net/http/pprof</code> has init function with default handlers which can show use basics information about runtime.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">init</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">init</span>() {
 	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/&#34;</span>, <span style="color:#a6e22e">Index</span>)
 	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/cmdline&#34;</span>, <span style="color:#a6e22e">Cmdline</span>)
 	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/debug/pprof/profile&#34;</span>, <span style="color:#a6e22e">Profile</span>)
@@ -199,7 +199,7 @@ of other pages, but we&rsquo;re interested in <code>profile</code> and <code>hea
 
 <p>Now you can run pprof for a while and check what was going on at this period. Let&rsquo;s run CPU profiling for
 30 seconds.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go tool pprof -http<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:9090&#34;</span> -seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> http://localhost:8081/debug/pprof/profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go tool pprof -http<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:9090&#34;</span> -seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span> http://localhost:8081/debug/pprof/profile
 </code></pre></div>
   <img src="/posts/pprof/graph.png"  alt="pprof graph page"  class="left"  />
 
