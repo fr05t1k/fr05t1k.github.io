@@ -10,16 +10,16 @@
 Замечание В последних версия Mac OS некоторые пути из которых запущены процессы находятся под защитой SIP (System Integrity Protection), которая запрещает отслеживание системных вызовов, например путь /usr/bin. Есть выход, который я бы не рекомендовал вам. Можно отключить для некоторых процессов эту защиту в recovery mode вашей системы."/>
 <meta name="keywords" content="software, компютерные науки, программирование, блог, разработка, инженерия, исходный код"/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://etcnotes.com/ru/posts/system-call/" />
+<link rel="canonical" href="https://fr05t1k.github.io/ru/posts/system-call/" />
 
 
 
 
 
-<link rel="stylesheet" href="https://etcnotes.com/assets/style.css">
+<link rel="stylesheet" href="https://fr05t1k.github.io/assets/style.css">
 
 
-<link rel="stylesheet" href="https://etcnotes.com/style.css">
+<link rel="stylesheet" href="https://fr05t1k.github.io/style.css">
 
 
 <link rel="shortcut icon" href="/img/favicon.png">
@@ -40,10 +40,9 @@
 <meta property="og:title" content="Как отслеживать системные вызовы в Mac OS?" />
 <meta property="og:description" content="DTruss это аналог strace на linux системах, использующая DTrase для отслеживания системных выозовов. Мы также рассмотрим альтернативный метод." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://etcnotes.com/ru/posts/system-call/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://fr05t1k.github.io/ru/posts/system-call/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-01-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-01-10T00:00:00+00:00" /><meta property="og:site_name" content="/etc/notes" />
-
 
 
 
@@ -130,7 +129,7 @@
   
 
   <div class="post">
-    <h1 class="post-title"><a href="https://etcnotes.com/ru/posts/system-call/">Как отслеживать системные вызовы в Mac OS?</a></h1>
+    <h1 class="post-title"><a href="https://fr05t1k.github.io/ru/posts/system-call/">Как отслеживать системные вызовы в Mac OS?</a></h1>
     <div class="post-meta">
       
         <span class="post-date">
@@ -150,8 +149,10 @@
 
     
       
-        <img src="https://etcnotes.com/img/instruments.png" class="post-cover" />
+        <img src="https://fr05t1k.github.io/img/instruments.png" class="post-cover" />
       
+    
+
     
 
     <div class="post-content">
@@ -162,22 +163,22 @@
 <p>В последних версия Mac OS некоторые пути из которых запущены процессы находятся под защитой SIP (System Integrity Protection), которая запрещает отслеживание системных вызовов, например путь /usr/bin. Есть выход, который я бы не рекомендовал вам. Можно отключить для некоторых процессов эту защиту в recovery mode вашей системы. В любом случае вы можете использовать DTruss для процессов которые не находятся под защитой SIP.</p>
 <h2 id="примеры">Примеры</h2>
 <p>запуск и отслеживание команды &ldquo;df -h&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss df -h
-</code></pre></div><p>отслеживание процесса с PID 1871</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -p <span style="color:#ae81ff">1871</span>
-</code></pre></div><p>отслеживать все процессы с именем &ldquo;tar&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -n tar
-</code></pre></div><p>запустить test.sh и отслеживать все дочерние процессы и форки</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dtruss -f test.sh
-</code></pre></div><p>запуск &ldquo;date&rdquo; команды и вывести реальное и процессорное время затраченое на вызов</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dtruss df -h
+</span></span></code></pre></div><p>отслеживание процесса с PID 1871</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dtruss -p <span style="color:#ae81ff">1871</span>
+</span></span></code></pre></div><p>отслеживать все процессы с именем &ldquo;tar&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dtruss -n tar
+</span></span></code></pre></div><p>запустить test.sh и отслеживать все дочерние процессы и форки</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dtruss -f test.sh
+</span></span></code></pre></div><p>запуск &ldquo;date&rdquo; команды и вывести реальное и процессорное время затраченое на вызов</p>
 <pre tabindex="0"><code>dtruss -eo date
 </code></pre><p>Вы можете компнуть глубже и разобраться в DTrace напрямую. DTrace это мощьный инструмент для профилирования в реальном времени. Можете почитать <a href="https://docs.oracle.com/cd/E19253-01/819-5488/index.html">здесь</a></p>
 <h1 id="instruments">Instruments</h1>
 <p>Как альтернативный путь, вы можете попробовать Istruments, который идет в поставке XCode (<a href="https://help.apple.com/instruments/mac/current">Документация</a>).</p>
 <p>Запустить профилирование, сохранить результат в файл <code>result.trace</code> и открыть этот результат.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">instruments  -d result.trace -t <span style="color:#e6db74">&#39;System Trace&#39;</span> /bin/ls
-open result.trace
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>instruments  -d result.trace -t <span style="color:#e6db74">&#39;System Trace&#39;</span> /bin/ls
+</span></span><span style="display:flex;"><span>open result.trace
+</span></span></code></pre></div>
   <img src="/img/instruments.png"  alt="Instruments demo"  class="center"  style="border-radius: 8px;"  />
 
 
@@ -188,7 +189,7 @@ open result.trace
       <div class="comments">
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -221,8 +222,8 @@ open result.trace
   </div>
 </footer>
 
-<script src="https://etcnotes.com/assets/main.js"></script>
-<script src="https://etcnotes.com/assets/prism.js"></script>
+<script src="https://fr05t1k.github.io/assets/main.js"></script>
+<script src="https://fr05t1k.github.io/assets/prism.js"></script>
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132816408-1"></script>
@@ -233,20 +234,6 @@ open result.trace
 
   gtag('config', 'UA-132816408-1');
 </script>
-
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(65561143, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/65561143" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 
       

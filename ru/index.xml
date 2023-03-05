@@ -5,25 +5,25 @@
     
     
     
-    <link>https://etcnotes.com/ru/</link>
+    <link>https://fr05t1k.github.io/ru/</link>
     <description>Recent content on /etc/notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;Все права защищены&lt;/a&gt;, 2019</copyright>
     <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://etcnotes.com/ru/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fr05t1k.github.io/ru/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ClickHouse. Не используйте &lt;path&gt; и &lt;path&gt; для диска в одной директории</title>
-      <link>https://etcnotes.com/ru/posts/path-and-storage-policies/</link>
+      <link>https://fr05t1k.github.io/ru/posts/path-and-storage-policies/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/ru/posts/path-and-storage-policies/</guid>
+      <guid>https://fr05t1k.github.io/ru/posts/path-and-storage-policies/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/storage-policy.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/storage-policy.png&#34;/&gt;
           
         
         
@@ -36,13 +36,13 @@
     
     <item>
       <title>PPROF. Профайлинг Golang приложений.</title>
-      <link>https://etcnotes.com/ru/posts/pprof/</link>
+      <link>https://fr05t1k.github.io/ru/posts/pprof/</link>
       <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/ru/posts/pprof/</guid>
+      <guid>https://fr05t1k.github.io/ru/posts/pprof/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/posts/pprof/pprof.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/posts/pprof/pprof.png&#34;/&gt;
           
         
         
@@ -55,10 +55,10 @@
     
     <item>
       <title>Вывод MySQL client как CSV</title>
-      <link>https://etcnotes.com/ru/posts/mysql2csv/</link>
+      <link>https://fr05t1k.github.io/ru/posts/mysql2csv/</link>
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/ru/posts/mysql2csv/</guid>
+      <guid>https://fr05t1k.github.io/ru/posts/mysql2csv/</guid>
       <description>
         
           
@@ -75,13 +75,13 @@
     
     <item>
       <title>Как оптимизировать агрегированные запросы в Clickhouse?</title>
-      <link>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</link>
+      <link>https://fr05t1k.github.io/ru/posts/materialized-view-and-aggregating-merge-tree/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</guid>
+      <guid>https://fr05t1k.github.io/ru/posts/materialized-view-and-aggregating-merge-tree/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/merge-tree.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/merge-tree.png&#34;/&gt;
           
         
         
@@ -94,13 +94,13 @@
     
     <item>
       <title>SSTable и LSM-деревья. Как хранить ключ-значение на диске?</title>
-      <link>https://etcnotes.com/ru/posts/sstable-and-lsm/</link>
+      <link>https://fr05t1k.github.io/ru/posts/sstable-and-lsm/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/ru/posts/sstable-and-lsm/</guid>
+      <guid>https://fr05t1k.github.io/ru/posts/sstable-and-lsm/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/posts/sstable-and-lsm/sparse-index.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/posts/sstable-and-lsm/sparse-index.png&#34;/&gt;
           
         
         
@@ -113,13 +113,13 @@
     
     <item>
       <title>Как отслеживать системные вызовы в Mac OS?</title>
-      <link>https://etcnotes.com/ru/posts/system-call/</link>
+      <link>https://fr05t1k.github.io/ru/posts/system-call/</link>
       <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/ru/posts/system-call/</guid>
+      <guid>https://fr05t1k.github.io/ru/posts/system-call/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/instruments.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/instruments.png&#34;/&gt;
           
         
         
@@ -132,13 +132,13 @@
     
     <item>
       <title>Python Cheat Sheet</title>
-      <link>https://etcnotes.com/ru/posts/python/</link>
+      <link>https://fr05t1k.github.io/ru/posts/python/</link>
       <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/ru/posts/python/</guid>
+      <guid>https://fr05t1k.github.io/ru/posts/python/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/python.jpeg&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/python.jpeg&#34;/&gt;
           
         
         
@@ -151,10 +151,10 @@
     
     <item>
       <title>Обо мне</title>
-      <link>https://etcnotes.com/ru/about/</link>
+      <link>https://fr05t1k.github.io/ru/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/ru/about/</guid>
+      <guid>https://fr05t1k.github.io/ru/about/</guid>
       <description>
         
           
@@ -163,11 +163,11 @@
         
         
         
-          Меня зовут Стас и я разработчик програмного обеспечения.
+           Меня зовут Стас и я разработчик програмного обеспечения.
 Я делюсь своей рутиной. Это помогает мне лучше запоминать информацию, когда я объясняю ее кому-то. Возможно вы найдете некоторые статьи полезные для себя.
 Хочу сразу попросить прощения за граматику в тексте :)
 Мои контакты:
- LinkedIn GitHub Email  
+LinkedIn GitHub Email 
           
         
         </description>

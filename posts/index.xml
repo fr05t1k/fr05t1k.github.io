@@ -5,25 +5,25 @@
     
     
     
-    <link>https://etcnotes.com/posts/</link>
+    <link>https://fr05t1k.github.io/posts/</link>
     <description>Recent content in Posts on /etc/notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/3.0/&#34;&gt;All rights reserved&lt;/a&gt;, 2019</copyright>
     <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://etcnotes.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fr05t1k.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ClickHouse. Storage Policies. Do not use Path and Disk&#39;s Path in the same directory.</title>
-      <link>https://etcnotes.com/posts/path-and-storage-policies/</link>
+      <link>https://fr05t1k.github.io/posts/path-and-storage-policies/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/path-and-storage-policies/</guid>
+      <guid>https://fr05t1k.github.io/posts/path-and-storage-policies/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/storage-policy.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/storage-policy.png&#34;/&gt;
           
         
         
@@ -36,13 +36,13 @@
     
     <item>
       <title>PPROF. Profiling Golang Applications.</title>
-      <link>https://etcnotes.com/posts/pprof/</link>
+      <link>https://fr05t1k.github.io/posts/pprof/</link>
       <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/pprof/</guid>
+      <guid>https://fr05t1k.github.io/posts/pprof/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/posts/pprof/pprof.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/posts/pprof/pprof.png&#34;/&gt;
           
         
         
@@ -55,10 +55,10 @@
     
     <item>
       <title>MySQL client out as CSV</title>
-      <link>https://etcnotes.com/posts/mysql2csv/</link>
+      <link>https://fr05t1k.github.io/posts/mysql2csv/</link>
       <pubDate>Fri, 28 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/mysql2csv/</guid>
+      <guid>https://fr05t1k.github.io/posts/mysql2csv/</guid>
       <description>
         
           
@@ -75,13 +75,13 @@
     
     <item>
       <title>How to optimize aggregate queries in Clickhouse?</title>
-      <link>https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/</link>
+      <link>https://fr05t1k.github.io/posts/materialized-view-and-aggregating-merge-tree/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/</guid>
+      <guid>https://fr05t1k.github.io/posts/materialized-view-and-aggregating-merge-tree/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/merge-tree.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/merge-tree.png&#34;/&gt;
           
         
         
@@ -94,13 +94,13 @@
     
     <item>
       <title>Site Reliability Engineering: Measuring and Managing Reliability (part 2)</title>
-      <link>https://etcnotes.com/posts/sre-2/</link>
+      <link>https://fr05t1k.github.io/posts/sre-2/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/sre-2/</guid>
+      <guid>https://fr05t1k.github.io/posts/sre-2/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/sre.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/sre.png&#34;/&gt;
           
         
         
@@ -113,13 +113,13 @@
     
     <item>
       <title>SSTable and LSM-trees. How to store Key-Value storage on the disk?</title>
-      <link>https://etcnotes.com/posts/sstable-and-lsm/</link>
+      <link>https://fr05t1k.github.io/posts/sstable-and-lsm/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/sstable-and-lsm/</guid>
+      <guid>https://fr05t1k.github.io/posts/sstable-and-lsm/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/posts/sstable-and-lsm/sparse-index.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/posts/sstable-and-lsm/sparse-index.png&#34;/&gt;
           
         
         
@@ -132,13 +132,13 @@
     
     <item>
       <title>Site Reliability Engineering: Measuring and Managing Reliability (part 1)</title>
-      <link>https://etcnotes.com/posts/sre/</link>
+      <link>https://fr05t1k.github.io/posts/sre/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/sre/</guid>
+      <guid>https://fr05t1k.github.io/posts/sre/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/sre.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/sre.png&#34;/&gt;
           
         
         
@@ -151,13 +151,13 @@
     
     <item>
       <title>How To Trace Your System Calls On Mac OS</title>
-      <link>https://etcnotes.com/posts/system-call/</link>
+      <link>https://fr05t1k.github.io/posts/system-call/</link>
       <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/system-call/</guid>
+      <guid>https://fr05t1k.github.io/posts/system-call/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/instruments.png&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/instruments.png&#34;/&gt;
           
         
         
@@ -170,13 +170,13 @@
     
     <item>
       <title>Python Cheat Sheet</title>
-      <link>https://etcnotes.com/posts/python/</link>
+      <link>https://fr05t1k.github.io/posts/python/</link>
       <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://etcnotes.com/posts/python/</guid>
+      <guid>https://fr05t1k.github.io/posts/python/</guid>
       <description>
         
-          &lt;img src=&#34;https://etcnotes.com/img/python.jpeg&#34;/&gt;
+          &lt;img src=&#34;https://fr05t1k.github.io/img/python.jpeg&#34;/&gt;
           
         
         

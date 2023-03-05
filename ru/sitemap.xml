@@ -2,133 +2,133 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://etcnotes.com/ru/</loc>
+    <loc>https://fr05t1k.github.io/ru/</loc>
     <lastmod>2020-06-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/"
+                href="https://fr05t1k.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/"
+                href="https://fr05t1k.github.io/ru/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/posts/path-and-storage-policies/</loc>
+    <loc>https://fr05t1k.github.io/ru/posts/path-and-storage-policies/</loc>
     <lastmod>2020-06-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/posts/path-and-storage-policies/"
+                href="https://fr05t1k.github.io/posts/path-and-storage-policies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/posts/path-and-storage-policies/"
+                href="https://fr05t1k.github.io/ru/posts/path-and-storage-policies/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/posts/</loc>
+    <loc>https://fr05t1k.github.io/ru/posts/</loc>
     <lastmod>2020-06-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/posts/"
+                href="https://fr05t1k.github.io/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/posts/"
+                href="https://fr05t1k.github.io/ru/posts/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/posts/pprof/</loc>
+    <loc>https://fr05t1k.github.io/ru/posts/pprof/</loc>
     <lastmod>2019-09-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/posts/pprof/"
+                href="https://fr05t1k.github.io/posts/pprof/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/posts/pprof/"
+                href="https://fr05t1k.github.io/ru/posts/pprof/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/posts/mysql2csv/</loc>
+    <loc>https://fr05t1k.github.io/ru/posts/mysql2csv/</loc>
     <lastmod>2019-06-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/posts/mysql2csv/"
+                href="https://fr05t1k.github.io/posts/mysql2csv/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/posts/mysql2csv/"
+                href="https://fr05t1k.github.io/ru/posts/mysql2csv/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/</loc>
+    <loc>https://fr05t1k.github.io/ru/posts/materialized-view-and-aggregating-merge-tree/</loc>
     <lastmod>2019-04-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/posts/materialized-view-and-aggregating-merge-tree/"
+                href="https://fr05t1k.github.io/posts/materialized-view-and-aggregating-merge-tree/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/posts/materialized-view-and-aggregating-merge-tree/"
+                href="https://fr05t1k.github.io/ru/posts/materialized-view-and-aggregating-merge-tree/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/posts/sstable-and-lsm/</loc>
+    <loc>https://fr05t1k.github.io/ru/posts/sstable-and-lsm/</loc>
     <lastmod>2019-01-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/posts/sstable-and-lsm/"
+                href="https://fr05t1k.github.io/posts/sstable-and-lsm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/posts/sstable-and-lsm/"
+                href="https://fr05t1k.github.io/ru/posts/sstable-and-lsm/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/posts/system-call/</loc>
+    <loc>https://fr05t1k.github.io/ru/posts/system-call/</loc>
     <lastmod>2019-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/posts/system-call/"
+                href="https://fr05t1k.github.io/posts/system-call/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/posts/system-call/"
+                href="https://fr05t1k.github.io/ru/posts/system-call/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/posts/python/</loc>
+    <loc>https://fr05t1k.github.io/ru/posts/python/</loc>
     <lastmod>2019-01-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/posts/python/"
+                href="https://fr05t1k.github.io/posts/python/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/posts/python/"
+                href="https://fr05t1k.github.io/ru/posts/python/"
                 />
   </url><url>
-    <loc>https://etcnotes.com/ru/about/</loc>
+    <loc>https://fr05t1k.github.io/ru/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://etcnotes.com/about/"
+                href="https://fr05t1k.github.io/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://etcnotes.com/ru/about/"
+                href="https://fr05t1k.github.io/ru/about/"
                 />
   </url>
 </urlset>

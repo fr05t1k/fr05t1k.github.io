@@ -7,19 +7,19 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content="Problem If you are going to do a ClickHouse node with multiple block storage, do not specify disk path and &amp;lt;path&amp;gt; in the same directory.
-&amp;lt;storage_configuration&amp;gt; &amp;lt;disks&amp;gt; &amp;lt;disk_hdd&amp;gt; &amp;lt;path&amp;gt;/var/lib/clickhouse-hdd/&amp;lt;/path&amp;gt; &amp;lt;/disk_hdd&amp;gt; &amp;lt;disk_ssd&amp;gt; &amp;lt;path&amp;gt;/var/lib/clickhouse-ssd/&amp;lt;/path&amp;gt; &amp;lt;/disk_ssd&amp;gt; &amp;lt;/disks&amp;gt; &amp;lt;policies&amp;gt; &amp;lt;moving_to_ssd&amp;gt; &amp;lt;volumes&amp;gt; &amp;lt;hot&amp;gt; &amp;lt;disk&amp;gt;disk_ssd&amp;lt;/disk&amp;gt; &amp;lt;/hot&amp;gt; &amp;lt;cold&amp;gt; &amp;lt;disk&amp;gt;disk_hdd&amp;lt;/disk&amp;gt; &amp;lt;/cold&amp;gt; &amp;lt;/volumes&amp;gt; &amp;lt;move_factor&amp;gt;0.2&amp;lt;/move_factor&amp;gt; &amp;lt;/moving_to_ssd&amp;gt; &amp;lt;/policies&amp;gt; &amp;lt;/storage_configuration&amp;gt; &amp;lt;!-- Path to data directory, with trailing slash. --&amp;gt; &amp;lt;path&amp;gt;/var/lib/clickhouse-hdd/&amp;lt;/path&amp;gt; CREATE TABLE stripcash.events ( `type` UInt64, `eventAt` DateTime, `eventDate` Date DEFAULT toDate(clickAt), ) ENGINE = MergeTree() PARTITION BY toYYYYMM(eventDate) SETTINGS storage_policy = &#39;moving_to_ssd&#39; Reason If you start server with the config you don&amp;rsquo;t get any notice and errors, but after a while when you start using the table and reload the server."/>
+&amp;lt;storage_configuration&amp;gt; &amp;lt;disks&amp;gt; &amp;lt;disk_hdd&amp;gt; &amp;lt;path&amp;gt;/var/lib/clickhouse-hdd/&amp;lt;/path&amp;gt; &amp;lt;/disk_hdd&amp;gt; &amp;lt;disk_ssd&amp;gt; &amp;lt;path&amp;gt;/var/lib/clickhouse-ssd/&amp;lt;/path&amp;gt; &amp;lt;/disk_ssd&amp;gt; &amp;lt;/disks&amp;gt; &amp;lt;policies&amp;gt; &amp;lt;moving_to_ssd&amp;gt; &amp;lt;volumes&amp;gt; &amp;lt;hot&amp;gt; &amp;lt;disk&amp;gt;disk_ssd&amp;lt;/disk&amp;gt; &amp;lt;/hot&amp;gt; &amp;lt;cold&amp;gt; &amp;lt;disk&amp;gt;disk_hdd&amp;lt;/disk&amp;gt; &amp;lt;/cold&amp;gt; &amp;lt;/volumes&amp;gt; &amp;lt;move_factor&amp;gt;0.2&amp;lt;/move_factor&amp;gt; &amp;lt;/moving_to_ssd&amp;gt; &amp;lt;/policies&amp;gt; &amp;lt;/storage_configuration&amp;gt; &amp;lt;!-- Path to data directory, with trailing slash. --&amp;gt; &amp;lt;path&amp;gt;/var/lib/clickhouse-hdd/&amp;lt;/path&amp;gt; CREATE TABLE stripcash.events(`type` UInt64,`eventAt` DateTime,`eventDate` Date DEFAULT toDate(clickAt),)ENGINE = MergeTree()PARTITION BY toYYYYMM(eventDate)SETTINGS storage_policy = &amp;#39;moving_to_ssd&amp;#39; Reason If you start server with the config you don&amp;rsquo;t get any notice and errors, but after a while when you start using the table and reload the server."/>
 <meta name="keywords" content="software, computer science, programming, blog, development, engineering, source code"/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://etcnotes.com/posts/path-and-storage-policies/" />
+<link rel="canonical" href="https://fr05t1k.github.io/posts/path-and-storage-policies/" />
 
 
 
 
 
-<link rel="stylesheet" href="https://etcnotes.com/assets/style.css">
+<link rel="stylesheet" href="https://fr05t1k.github.io/assets/style.css">
 
 
-<link rel="stylesheet" href="https://etcnotes.com/style.css">
+<link rel="stylesheet" href="https://fr05t1k.github.io/style.css">
 
 
 <link rel="shortcut icon" href="/img/favicon.png">
@@ -40,10 +40,9 @@
 <meta property="og:title" content="ClickHouse. Storage Policies. Do not use Path and Disk&#39;s Path in the same directory." />
 <meta property="og:description" content="ClickHouse. Using Multiple Block Devices for Data Storage. Do not use Path and Disk&#39;s Path in the same directory." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://etcnotes.com/posts/path-and-storage-policies/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://fr05t1k.github.io/posts/path-and-storage-policies/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-17T00:00:00+00:00" /><meta property="og:site_name" content="/etc/notes" />
-
 
 
 
@@ -130,7 +129,7 @@
   
 
   <div class="post">
-    <h1 class="post-title"><a href="https://etcnotes.com/posts/path-and-storage-policies/">ClickHouse. Storage Policies. Do not use Path and Disk&rsquo;s Path in the same directory.</a></h1>
+    <h1 class="post-title"><a href="https://fr05t1k.github.io/posts/path-and-storage-policies/">ClickHouse. Storage Policies. Do not use Path and Disk&rsquo;s Path in the same directory.</a></h1>
     <div class="post-meta">
       
         <span class="post-date">
@@ -150,40 +149,42 @@
 
     
       
-        <img src="https://etcnotes.com/img/storage-policy.png" class="post-cover" />
+        <img src="https://fr05t1k.github.io/img/storage-policy.png" class="post-cover" />
       
+    
+
     
 
     <div class="post-content">
       
       <h1 id="problem">Problem</h1>
 <p>If you are going to do a ClickHouse node with multiple block storage, do not specify <code>disk path</code> and <code>&lt;path&gt;</code> in the same directory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;storage_configuration&gt;</span>
-    <span style="color:#f92672">&lt;disks&gt;</span>
-        <span style="color:#f92672">&lt;disk_hdd&gt;</span>
-            <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/<span style="color:#f92672">&lt;/path&gt;</span>
-        <span style="color:#f92672">&lt;/disk_hdd&gt;</span>
-        <span style="color:#f92672">&lt;disk_ssd&gt;</span>
-            <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-ssd/<span style="color:#f92672">&lt;/path&gt;</span>
-        <span style="color:#f92672">&lt;/disk_ssd&gt;</span>
-    <span style="color:#f92672">&lt;/disks&gt;</span>
-    <span style="color:#f92672">&lt;policies&gt;</span>
-        <span style="color:#f92672">&lt;moving_to_ssd&gt;</span>
-            <span style="color:#f92672">&lt;volumes&gt;</span>
-                <span style="color:#f92672">&lt;hot&gt;</span>
-                    <span style="color:#f92672">&lt;disk&gt;</span>disk_ssd<span style="color:#f92672">&lt;/disk&gt;</span>
-                <span style="color:#f92672">&lt;/hot&gt;</span>
-                <span style="color:#f92672">&lt;cold&gt;</span>
-                    <span style="color:#f92672">&lt;disk&gt;</span>disk_hdd<span style="color:#f92672">&lt;/disk&gt;</span>
-                <span style="color:#f92672">&lt;/cold&gt;</span>
-            <span style="color:#f92672">&lt;/volumes&gt;</span>
-            <span style="color:#f92672">&lt;move_factor&gt;</span>0.2<span style="color:#f92672">&lt;/move_factor&gt;</span>
-        <span style="color:#f92672">&lt;/moving_to_ssd&gt;</span>
-    <span style="color:#f92672">&lt;/policies&gt;</span>
-<span style="color:#f92672">&lt;/storage_configuration&gt;</span>
-<span style="color:#75715e">&lt;!-- Path to data directory, with trailing slash. --&gt;</span>
-<span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/<span style="color:#f92672">&lt;/path&gt;</span>
-</code></pre></div><pre tabindex="0"><code class="language-$xslt" data-lang="$xslt">CREATE TABLE stripcash.events
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;storage_configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;disks&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;disk_hdd&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/<span style="color:#f92672">&lt;/path&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/disk_hdd&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;disk_ssd&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-ssd/<span style="color:#f92672">&lt;/path&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/disk_ssd&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/disks&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;policies&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;moving_to_ssd&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;volumes&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;hot&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;disk&gt;</span>disk_ssd<span style="color:#f92672">&lt;/disk&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;/hot&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;cold&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;disk&gt;</span>disk_hdd<span style="color:#f92672">&lt;/disk&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;/cold&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/volumes&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;move_factor&gt;</span>0.2<span style="color:#f92672">&lt;/move_factor&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/moving_to_ssd&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/policies&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/storage_configuration&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Path to data directory, with trailing slash. --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/<span style="color:#f92672">&lt;/path&gt;</span>
+</span></span></code></pre></div><pre tabindex="0"><code class="language-$xslt" data-lang="$xslt">CREATE TABLE stripcash.events
 (
     `type` UInt64,
     `eventAt` DateTime,
@@ -191,7 +192,7 @@
 )
 ENGINE = MergeTree()
 PARTITION BY toYYYYMM(eventDate)
-SETTINGS storage_policy = 'moving_to_ssd'
+SETTINGS storage_policy = &#39;moving_to_ssd&#39;
 </code></pre><h1 id="reason">Reason</h1>
 <p>If you start server with the config you don&rsquo;t get any notice and errors, but after a while when you start using the table and reload the server. You get an error:</p>
 <pre tabindex="0"><code>2020.06.15 05:54:59.867745 [ 195173 ] {} &lt;Error&gt; Application: DB::Exception: Part `201811_0_2998_6` was found on disk `default` which is not defined in the storage policy: Cannot attach table `default`.`events` from metadata file
@@ -201,32 +202,32 @@ SETTINGS storage_policy = 'moving_to_ssd'
 <li>Create directories <code>/var/lib/clickhouse-hdd/hdd</code> and <code>/var/lib/clickhouse-hdd/default</code> (make sure the owner of the directories is <code>clickhouse</code>)</li>
 <li>Change the config</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;storage_configuration&gt;</span>
-    <span style="color:#f92672">&lt;disks&gt;</span>
-        <span style="color:#f92672">&lt;disk_hdd&gt;</span>
-            <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/hdd/<span style="color:#f92672">&lt;/path&gt;</span>
-        <span style="color:#f92672">&lt;/disk_hdd&gt;</span>
-        <span style="color:#f92672">&lt;disk_ssd&gt;</span>
-            <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-ssd/<span style="color:#f92672">&lt;/path&gt;</span>
-        <span style="color:#f92672">&lt;/disk_ssd&gt;</span>
-    <span style="color:#f92672">&lt;/disks&gt;</span>
-    <span style="color:#f92672">&lt;policies&gt;</span>
-        <span style="color:#f92672">&lt;moving_to_ssd&gt;</span>
-            <span style="color:#f92672">&lt;volumes&gt;</span>
-                <span style="color:#f92672">&lt;hot&gt;</span>
-                    <span style="color:#f92672">&lt;disk&gt;</span>disk_ssd<span style="color:#f92672">&lt;/disk&gt;</span>
-                <span style="color:#f92672">&lt;/hot&gt;</span>
-                <span style="color:#f92672">&lt;cold&gt;</span>
-                    <span style="color:#f92672">&lt;disk&gt;</span>disk_hdd<span style="color:#f92672">&lt;/disk&gt;</span>
-                <span style="color:#f92672">&lt;/cold&gt;</span>
-            <span style="color:#f92672">&lt;/volumes&gt;</span>
-            <span style="color:#f92672">&lt;move_factor&gt;</span>0.2<span style="color:#f92672">&lt;/move_factor&gt;</span>
-        <span style="color:#f92672">&lt;/moving_to_ssd&gt;</span>
-    <span style="color:#f92672">&lt;/policies&gt;</span>
-<span style="color:#f92672">&lt;/storage_configuration&gt;</span>
-<span style="color:#75715e">&lt;!-- Path to data directory, with trailing slash. --&gt;</span>
-<span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/default/<span style="color:#f92672">&lt;/path&gt;</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;storage_configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;disks&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;disk_hdd&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/hdd/<span style="color:#f92672">&lt;/path&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/disk_hdd&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;disk_ssd&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-ssd/<span style="color:#f92672">&lt;/path&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/disk_ssd&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/disks&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;policies&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;moving_to_ssd&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;volumes&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;hot&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;disk&gt;</span>disk_ssd<span style="color:#f92672">&lt;/disk&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;/hot&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;cold&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;disk&gt;</span>disk_hdd<span style="color:#f92672">&lt;/disk&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;/cold&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/volumes&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;move_factor&gt;</span>0.2<span style="color:#f92672">&lt;/move_factor&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/moving_to_ssd&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/policies&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/storage_configuration&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Path to data directory, with trailing slash. --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;path&gt;</span>/var/lib/clickhouse-hdd/default/<span style="color:#f92672">&lt;/path&gt;</span>
+</span></span></code></pre></div><ol start="3">
 <li>Move everything from <code>/var/lib/clickhouse-hdd/</code> to <code>/var/lib/clickhouse-hdd/default</code> except <code>hdd</code> и <code>default</code></li>
 <li>Move <code>/var/lib/clickhouse-hdd/default/data/events</code> to <code>/var/lib/clickhouse-hdd/hdd/data/events</code></li>
 <li>Run the server.</li>
@@ -240,7 +241,7 @@ SETTINGS storage_policy = 'moving_to_ssd'
       <div class="comments">
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -273,8 +274,8 @@ SETTINGS storage_policy = 'moving_to_ssd'
   </div>
 </footer>
 
-<script src="https://etcnotes.com/assets/main.js"></script>
-<script src="https://etcnotes.com/assets/prism.js"></script>
+<script src="https://fr05t1k.github.io/assets/main.js"></script>
+<script src="https://fr05t1k.github.io/assets/prism.js"></script>
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132816408-1"></script>
@@ -285,20 +286,6 @@ SETTINGS storage_policy = 'moving_to_ssd'
 
   gtag('config', 'UA-132816408-1');
 </script>
-
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(65561143, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/65561143" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 
       
